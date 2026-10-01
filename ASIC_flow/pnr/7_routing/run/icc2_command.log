@@ -1,10 +1,11 @@
 #@ # 
 #@ # Running icc2_shell Version O-2018.06-SP1 for linux64 -- Jul 17, 2018
-#@ # Date:   Fri Sep 18 17:07:42 2026
+#@ # Date:   Wed Sep 23 21:12:46 2026
 #@ # Run by: ICer@IC_EDA
 #@ 
 
 open_block zigbee_phy_tx_routing
+open_lib ../../2_design_lib/results/${design}.dlib
 set design         "zigbee_phy_tx"
 set prev_stage     "cts"
 set current_stage  "routing"
@@ -20,22 +21,47 @@ win_set_select_class -visible {cell port bound routing_blockage shaping_blockage
 win_set_filter -class cell -filter {cell_array hard_macro_margin hard_margin route_blockage_margin soft_margin}
 win_set_filter -class placement_blockage -filter {wiring} -layer {0-77}
 win_set_select_class {cell port bound routing_blockage shaping_blockage pg_region pin_blockage topology_node topology_edge edit_group shape via placement_blockage }
-sizeof_collection [get_cells "DECAP_*"]
-sizeof_collection [get_cells "ROUTE_*"]
-sizeof_collection [get_cells "FILLER*"]
-report_qor -summary
-check_routes
-gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {323.020 362.690}
-gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {327.860 358.045}
-gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {327.860 358.045}
-gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {327.860 358.045}
-gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {327.860 358.045}
-gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {328.310 355.715}
-gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {328.310 355.715}
-gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {340.605 355.150}
-gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {348.135 354.570}
-gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {360.300 339.510}
-sizeof_collection [get_cells "DECAP_*"]
-sizeof_collection [get_cells "FILLER*"]
-sizeof_collection [get_cells -filter "ref_name =~ *DCAP*"]
-sizeof_collection [get_cells -filter "ref_name =~ *SHFILL*"]
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {327.095 388.025}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {326.985 388.030}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {326.985 388.030}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {326.985 388.030}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {340.495 368.300}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {334.685 366.410}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {455.615 419.105}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {453.995 418.835}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {502.640 412.890}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {553.440 341.550}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {608.570 341.550}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {661.535 358.305}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {585.330 340.740}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {625.460 339.115}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {628.025 339.115}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {651.265 335.605}
+win_select_objects -within {{543.175 328.575} {603.165 333.170}} -slct_targets global -slct_targets_operation remove
+gui_scroll -window [gui_get_current_window -types Layout -view] -vrel 0.25
+gui_scroll -window [gui_get_current_window -types Layout -view] -vrel 0.25
+gui_scroll -window [gui_get_current_window -types Layout -view] -vrel 0.25
+gui_scroll -window [gui_get_current_window -types Layout -view] -vrel 0.25
+gui_scroll -window [gui_get_current_window -types Layout -view] -vrel -0.25
+gui_scroll -window [gui_get_current_window -types Layout -view] -vrel -0.25
+gui_scroll -window [gui_get_current_window -types Layout -view] -vrel -0.25
+gui_scroll -window [gui_get_current_window -types Layout -view] -hrel 0.25
+gui_scroll -window [gui_get_current_window -types Layout -view] -hrel 0.25
+gui_scroll -window [gui_get_current_window -types Layout -view] -hrel -0.25
+gui_scroll -window [gui_get_current_window -types Layout -view] -hrel 0.25
+gui_scroll -window [gui_get_current_window -types Layout -view] -hrel 0.25
+gui_scroll -window [gui_get_current_window -types Layout -view] -hrel 0.25
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {565.060 290.745}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {575.600 293.715}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {575.630 293.695}
+gui_scroll -window [gui_get_current_window -types Layout -view] -vrel -0.25
+gui_scroll -window [gui_get_current_window -types Layout -view] -vrel 0.25
+gui_scroll -window [gui_get_current_window -types Layout -view] -hrel -0.25
+gui_scroll -window [gui_get_current_window -types Layout -view] -hrel 0.25
+gui_scroll -window [gui_get_current_window -types Layout -view] -hrel 0.25
+gui_scroll -window [gui_get_current_window -types Layout -view] -hrel -0.25
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {578.710 288.040}
+gui_scroll -window [gui_get_current_window -types Layout -view] -vrel -0.25
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 0.5 -at_point {576.140 327.225}
+gui_zoom -window [gui_get_current_window -types Layout -view] -factor 2 -at_point {573.980 329.120}
+gui_scroll -window [gui_get_current_window -types Layout -view] -hrel -0.25
