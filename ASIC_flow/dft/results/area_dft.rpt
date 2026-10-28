@@ -1,0 +1,68 @@
+ 
+****************************************
+Report : area
+Design : zigbee_phy_tx
+Version: O-2018.06-SP1
+Date   : Fri Sep 18 09:41:12 2026
+****************************************
+
+Library(s) Used:
+
+    saed90nm_max (File: /home/ICer/Labs/Zigbee/std_cells/saed90nm_max.db)
+
+Number of ports:                          526
+Number of nets:                         15466
+Number of cells:                        11735
+Number of combinational cells:           8453
+Number of sequential cells:              3257
+Number of macros/black boxes:               0
+Number of buf/inv:                       2084
+Number of references:                      17
+
+Combinational area:              82658.303588
+Buf/Inv area:                    13851.648221
+Noncombinational area:           98701.516266
+Macro/Black Box area:                0.000000
+Net Interconnect area:           10250.439058
+
+Total cell area:                181359.819854
+Total area:                     191610.258912
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area             Local cell area
+                                  --------------------  ------------------------------ 
+Hierarchical cell                 Absolute     Percent  Combi-      Noncombi-   Black-
+                                  Total        Total    national    national    boxes   Design
+--------------------------------  -----------  -------  ----------  ----------  ------  ----------------------------------------
+zigbee_phy_tx                     181359.8199    100.0    115.2000      0.0000  0.0000  zigbee_phy_tx
+u_clock_mux                           18.4320      0.0     18.4320      0.0000  0.0000  mux2x1_DATA_WIDTH1_0
+u_ctrl_fsm                          1622.0160      0.9    921.6000    587.0592  0.0000  master_ctrl_fsm_test_1
+u_ctrl_fsm/add_160                   113.3568      0.1    113.3568      0.0000  0.0000  master_ctrl_fsm_DW01_inc_0
+u_demux                              242.3808      0.1     90.3168    152.0640  0.0000  demux_test_1
+u_form_ppdu                          700.4160      0.4      7.3728      0.0000  0.0000  form_ppdu_DATA_WIDTH4_ADDR_WIDTH4_test_1
+u_form_ppdu/I_mux                     53.4528      0.0     53.4528      0.0000  0.0000  mux2x1_DATA_WIDTH4_0
+u_form_ppdu/I_piso                   282.0096      0.2     90.3168    191.6928  0.0000  piso_DATA_WIDTH4_test_0
+u_form_ppdu/Q_mux                     53.4528      0.0     53.4528      0.0000  0.0000  mux2x1_DATA_WIDTH4_1
+u_form_ppdu/Q_piso                   282.0096      0.2     90.3168    191.6928  0.0000  piso_DATA_WIDTH4_test_1
+u_form_ppdu/rom_dut                   22.1184      0.0     22.1184      0.0000  0.0000  preamble_sfd_rom_ADDR_WIDTH4_DATA_WIDTH4
+u_mod_top                           3469.8240      1.9      7.3728     30.4128  0.0000  qpsk_dqpsk_chirp_top_test_1
+u_mod_top/u_chirp                   2045.9520      1.1    881.0496   1164.9024  0.0000  chirp_modulation_test_1
+u_mod_top/u_dqpsk                   1353.8304      0.7    684.7488    669.0816  0.0000  dqpsk_encoder_test_1
+u_mod_top/u_qpsk                      32.2560      0.0     32.2560      0.0000  0.0000  qpsk_mapper
+u_payload_ram                      54968.8317     30.3  23826.1246  31142.7070  0.0000  payload_ram_test_1
+u_reset_mux                           18.4320      0.0     18.4320      0.0000  0.0000  mux2x1_DATA_WIDTH1_1
+u_sm_I                               949.2480      0.5    318.8736    517.0176  0.0000  symbol_mapper_test_0
+u_sm_I/add_60                        113.3568      0.1    113.3568      0.0000  0.0000  symbol_mapper_0_DW01_inc_0
+u_sm_Q                               955.6992      0.5    325.3248    517.0176  0.0000  symbol_mapper_test_1
+u_sm_Q/add_60                        113.3568      0.1    113.3568      0.0000  0.0000  symbol_mapper_1_DW01_inc_0
+u_sm_ram_I                         57292.1853     31.6  26027.8271  31264.3582  0.0000  sm_ram_test_0
+u_sm_ram_Q                         58160.3325     32.1  26890.4447  31269.8878  0.0000  sm_ram_test_1
+u_zp                                2727.9360      1.5   1626.6240   1003.6224  0.0000  zero_padder_test_1
+u_zp/add_101                          97.6896      0.1     97.6896      0.0000  0.0000  zero_padder_DW01_inc_0
+u_zp_mux                             118.8864      0.1    118.8864      0.0000  0.0000  mux2x1_DATA_WIDTH8
+--------------------------------  -----------  -------  ----------  ----------  ------  ----------------------------------------
+Total                                                   82658.3036  98701.5163  0.0000
+
+1

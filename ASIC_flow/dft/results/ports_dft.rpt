@@ -1,0 +1,92 @@
+ 
+****************************************
+Report : port
+Design : zigbee_phy_tx
+Version: O-2018.06-SP1
+Date   : Fri Sep 18 09:41:14 2026
+****************************************
+
+
+
+Attributes:
+    i - ideal_network
+
+                       Pin      Wire     Max     Max     Connection
+Port           Dir     Load     Load     Trans   Cap     Class      Attrs
+--------------------------------------------------------------------------------
+SE             in      0.0000   0.0000    2.19  416.00   --         i
+SI             in      0.0000   0.0000    2.19  416.00   --         
+clk            in      0.0000   0.0000   --      --      --         i
+payloadLength[0]
+               in      0.0000   0.0000    2.19  416.00   --         
+payloadLength[1]
+               in      0.0000   0.0000    2.19  416.00   --         
+payloadLength[2]
+               in      0.0000   0.0000    2.19  416.00   --         
+payloadLength[3]
+               in      0.0000   0.0000    2.19  416.00   --         
+payloadLength[4]
+               in      0.0000   0.0000    2.19  416.00   --         
+payloadLength[5]
+               in      0.0000   0.0000    2.19  416.00   --         
+payloadLength[6]
+               in      0.0000   0.0000    2.19  416.00   --         
+payloadLength[7]
+               in      0.0000   0.0000    2.19  416.00   --         
+payload_addr[0]
+               in      0.0000   0.0000    2.19  416.00   --         
+payload_addr[1]
+               in      0.0000   0.0000    2.19  416.00   --         
+payload_addr[2]
+               in      0.0000   0.0000    2.19  416.00   --         
+payload_addr[3]
+               in      0.0000   0.0000    2.19  416.00   --         
+payload_addr[4]
+               in      0.0000   0.0000    2.19  416.00   --         
+payload_addr[5]
+               in      0.0000   0.0000    2.19  416.00   --         
+payload_addr[6]
+               in      0.0000   0.0000    2.19  416.00   --         
+payload_addr[7]
+               in      0.0000   0.0000    2.19  416.00   --         
+payload_din[0] in      0.0000   0.0000    2.19  416.00   --         
+payload_din[1] in      0.0000   0.0000    2.19  416.00   --         
+payload_din[2] in      0.0000   0.0000    2.19  416.00   --         
+payload_din[3] in      0.0000   0.0000    2.19  416.00   --         
+payload_din[4] in      0.0000   0.0000    2.19  416.00   --         
+payload_din[5] in      0.0000   0.0000    2.19  416.00   --         
+payload_din[6] in      0.0000   0.0000    2.19  416.00   --         
+payload_din[7] in      0.0000   0.0000    2.19  416.00   --         
+payload_wr_en  in      0.0000   0.0000    2.19  416.00   --         
+reset          in      0.0000   0.0000    2.19  416.00   --         i
+scan_clk       in      0.0000   0.0000   --      --      --         i
+scan_rst       in      0.0000   0.0000    2.19  416.00   --         i
+start_Tx       in      0.0000   0.0000    2.19  416.00   --         
+test_mode      in      0.0000   0.0000    2.19  416.00   --         i
+test_si2       in      0.0000   0.0000   --      --      --         
+test_si3       in      0.0000   0.0000   --      --      --         
+test_si4       in      0.0000   0.0000   --      --      --         
+SO             out     0.1000   0.0000   --      --      --         
+Tx_imag[0]     out     5.0000   0.0000   --      --      --         
+Tx_imag[1]     out     5.0000   0.0000   --      --      --         
+Tx_imag[2]     out     5.0000   0.0000   --      --      --         
+Tx_imag[3]     out     5.0000   0.0000   --      --      --         
+Tx_imag[4]     out     5.0000   0.0000   --      --      --         
+Tx_imag[5]     out     5.0000   0.0000   --      --      --         
+Tx_imag[6]     out     5.0000   0.0000   --      --      --         
+Tx_imag[7]     out     5.0000   0.0000   --      --      --         
+Tx_real[0]     out     5.0000   0.0000   --      --      --         
+Tx_real[1]     out     5.0000   0.0000   --      --      --         
+Tx_real[2]     out     5.0000   0.0000   --      --      --         
+Tx_real[3]     out     5.0000   0.0000   --      --      --         
+Tx_real[4]     out     5.0000   0.0000   --      --      --         
+Tx_real[5]     out     5.0000   0.0000   --      --      --         
+Tx_real[6]     out     5.0000   0.0000   --      --      --         
+Tx_real[7]     out     5.0000   0.0000   --      --      --         
+done_Tx        out     5.0000   0.0000   --      --      --         
+sample_valid   out     5.0000   0.0000   --      --      --         
+test_so2       out     0.0000   0.0000   --      --      --         
+test_so3       out     0.0000   0.0000   --      --      --         
+test_so4       out     0.0000   0.0000   --      --      --         
+
+1

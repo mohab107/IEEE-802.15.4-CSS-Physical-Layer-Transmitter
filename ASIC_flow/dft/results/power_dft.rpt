@@ -1,0 +1,108 @@
+Loading db file '/home/ICer/Labs/Zigbee/std_cells/saed90nm_max.db'
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : zigbee_phy_tx
+Version: O-2018.06-SP1
+Date   : Fri Sep 18 09:41:13 2026
+****************************************
+
+
+Library(s) Used:
+
+    saed90nm_max (File: /home/ICer/Labs/Zigbee/std_cells/saed90nm_max.db)
+
+
+Operating Conditions: WORST   Library: saed90nm_max
+Wire Load Model Mode: enclosed
+
+Design        Wire Load Model            Library
+------------------------------------------------
+zigbee_phy_tx          ForQA             saed90nm_max
+mux2x1_DATA_WIDTH1_0   ForQA             saed90nm_max
+mux2x1_DATA_WIDTH1_1   ForQA             saed90nm_max
+master_ctrl_fsm_test_1 8000              saed90nm_max
+payload_ram_test_1     70000             saed90nm_max
+mux2x1_DATA_WIDTH8     ForQA             saed90nm_max
+zero_padder_test_1     8000              saed90nm_max
+demux_test_1           8000              saed90nm_max
+symbol_mapper_test_0   8000              saed90nm_max
+symbol_mapper_test_1   8000              saed90nm_max
+sm_ram_test_0          70000             saed90nm_max
+sm_ram_test_1          70000             saed90nm_max
+form_ppdu_DATA_WIDTH4_ADDR_WIDTH4_test_1
+                       8000              saed90nm_max
+qpsk_dqpsk_chirp_top_test_1
+                       8000              saed90nm_max
+master_ctrl_fsm_DW01_inc_0
+                       ForQA             saed90nm_max
+zero_padder_DW01_inc_0 ForQA             saed90nm_max
+symbol_mapper_0_DW01_inc_0
+                       ForQA             saed90nm_max
+symbol_mapper_1_DW01_inc_0
+                       ForQA             saed90nm_max
+mux2x1_DATA_WIDTH4_0   ForQA             saed90nm_max
+preamble_sfd_rom_ADDR_WIDTH4_DATA_WIDTH4
+                       ForQA             saed90nm_max
+piso_DATA_WIDTH4_test_0
+                       8000              saed90nm_max
+piso_DATA_WIDTH4_test_1
+                       8000              saed90nm_max
+qpsk_mapper            ForQA             saed90nm_max
+dqpsk_encoder_test_1   8000              saed90nm_max
+chirp_modulation_test_1
+                       8000              saed90nm_max
+mux2x1_DATA_WIDTH4_1   ForQA             saed90nm_max
+
+
+Global Operating Voltage = 0.7  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+zigbee_phy_tx                            15.198      N/A 3.12e+10 3.11e+04 100.0
+  u_mod_top (qpsk_dqpsk_chirp_top_test_1)
+                                          0.611      N/A 5.86e+08  584.259   1.9
+    u_chirp (chirp_modulation_test_1)     0.384      N/A 3.65e+08  363.999   1.2
+    u_dqpsk (dqpsk_encoder_test_1)        0.212      N/A 2.11e+08  210.707   0.7
+    u_qpsk (qpsk_mapper)               1.03e-02 9.13e-03 8.88e+04    0.108   0.0
+  u_form_ppdu (form_ppdu_DATA_WIDTH4_ADDR_WIDTH4_test_1)
+                                       8.13e-02      N/A 1.17e+08  116.632   0.4
+    Q_piso (piso_DATA_WIDTH4_test_1)   3.64e-02      N/A 5.85e+07   58.075   0.2
+    I_piso (piso_DATA_WIDTH4_test_0)   3.64e-02      N/A 5.85e+07   58.074   0.2
+    rom_dut (preamble_sfd_rom_ADDR_WIDTH4_DATA_WIDTH4)
+                                          0.000    0.000 6.68e+04 6.68e-02   0.0
+    Q_mux (mux2x1_DATA_WIDTH4_1)       3.31e-03 6.92e-03 1.76e+05    0.186   0.0
+    I_mux (mux2x1_DATA_WIDTH4_0)       3.32e-03 7.17e-03 1.76e+05    0.187   0.0
+  u_sm_ram_Q (sm_ram_test_1)              3.656      N/A 9.89e+09 9.88e+03  31.8
+  u_sm_ram_I (sm_ram_test_0)              4.156      N/A 9.87e+09 9.85e+03  31.6
+  u_sm_Q (symbol_mapper_test_1)           0.310      N/A 1.63e+08  162.398   0.5
+    add_60 (symbol_mapper_1_DW01_inc_0)
+                                       1.59e-02    0.195 5.39e+05    0.750   0.0
+  u_sm_I (symbol_mapper_test_0)           0.284      N/A 1.63e+08  162.742   0.5
+    add_60 (symbol_mapper_0_DW01_inc_0)
+                                       1.38e-02    0.183 5.40e+05    0.737   0.0
+  u_demux (demux_test_1)               5.27e-02      N/A 4.79e+07   47.540   0.2
+  u_zp (zero_padder_test_1)               0.687      N/A 3.20e+08  319.822   1.0
+    add_101 (zero_padder_DW01_inc_0)   9.89e-03    0.117 4.59e+05    0.587   0.0
+  u_zp_mux (mux2x1_DATA_WIDTH8)        8.44e-02 8.73e-02 4.23e+05    0.595   0.0
+  u_payload_ram (payload_ram_test_1)      4.834      N/A 9.83e+09 9.80e+03  31.5
+  u_ctrl_fsm (master_ctrl_fsm_test_1)     0.399      N/A 1.85e+08  185.122   0.6
+    add_160 (master_ctrl_fsm_DW01_inc_0)
+                                       1.06e-02    0.140 5.41e+05    0.691   0.0
+  u_reset_mux (mux2x1_DATA_WIDTH1_1)      0.000 1.05e-02 6.96e+04 8.01e-02   0.0
+  u_clock_mux (mux2x1_DATA_WIDTH1_0)      0.000 6.33e-02 7.34e+04    0.137   0.0
+1

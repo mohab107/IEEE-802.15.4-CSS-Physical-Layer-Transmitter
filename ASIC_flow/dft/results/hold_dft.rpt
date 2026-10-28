@@ -1,0 +1,3515 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 100
+Design : zigbee_phy_tx
+Version: O-2018.06-SP1
+Date   : Fri Sep 18 09:41:13 2026
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: WORST   Library: saed90nm_max
+Wire Load Model Mode: enclosed
+
+  Startpoint: u_form_ppdu/I_piso/q_reg[3]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_form_ppdu/I_piso/valid_reg
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  piso_DATA_WIDTH4_test_0
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_form_ppdu/I_piso/q_reg[3]/CLK (SDFFX1)                0.00 #    45.00 r
+  u_form_ppdu/I_piso/q_reg[3]/QN (SDFFX1)                 0.38      45.38 f
+  u_form_ppdu/I_piso/valid_reg/SI (SDFFSSRX1)             0.03      45.41 f
+  data arrival time                                                 45.41
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_form_ppdu/I_piso/valid_reg/CLK (SDFFSSRX1)            0.00      45.01 r
+  library hold time                                      -0.16      44.85
+  data required time                                                44.85
+  --------------------------------------------------------------------------
+  data required time                                                44.85
+  data arrival time                                                -45.41
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.56
+
+
+  Startpoint: u_form_ppdu/Q_piso/q_reg[3]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_form_ppdu/Q_piso/valid_reg
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  piso_DATA_WIDTH4_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_form_ppdu/Q_piso/q_reg[3]/CLK (SDFFX1)                0.00 #    45.00 r
+  u_form_ppdu/Q_piso/q_reg[3]/QN (SDFFX1)                 0.38      45.38 f
+  u_form_ppdu/Q_piso/valid_reg/SI (SDFFSSRX1)             0.03      45.41 f
+  data arrival time                                                 45.41
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_form_ppdu/Q_piso/valid_reg/CLK (SDFFSSRX1)            0.00      45.01 r
+  library hold time                                      -0.16      44.85
+  data required time                                                44.85
+  --------------------------------------------------------------------------
+  data required time                                                44.85
+  data arrival time                                                -45.41
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.56
+
+
+  Startpoint: u_ctrl_fsm/sm_ram_rd_addr_reg_reg[7]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_demux/even_bit_reg
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_ctrl_fsm/sm_ram_rd_addr_reg_reg[7]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_ctrl_fsm/sm_ram_rd_addr_reg_reg[7]/QN (SDFFX1)        0.39      45.39 f
+  u_ctrl_fsm/test_so (master_ctrl_fsm_test_1)             0.00      45.39 f
+  u_demux/test_si (demux_test_1)                          0.00      45.39 f
+  u_demux/even_bit_reg/SI (SDFFX1)                        0.03      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_demux/even_bit_reg/CLK (SDFFX1)                       0.00      45.01 r
+  library hold time                                      -0.22      44.79
+  data required time                                                44.79
+  --------------------------------------------------------------------------
+  data required time                                                44.79
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: u_demux/o_valid_Q_reg
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_form_ppdu/I_piso/out_reg
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_demux/o_valid_Q_reg/CLK (SDFFX1)                      0.00 #    45.00 r
+  u_demux/o_valid_Q_reg/QN (SDFFX1)                       0.39      45.39 f
+  u_demux/test_so (demux_test_1)                          0.00      45.39 f
+  u_form_ppdu/test_si (form_ppdu_DATA_WIDTH4_ADDR_WIDTH4_test_1)
+                                                          0.00      45.39 f
+  u_form_ppdu/I_piso/test_si (piso_DATA_WIDTH4_test_0)
+                                                          0.00      45.39 f
+  u_form_ppdu/I_piso/out_reg/SI (SDFFX1)                  0.03      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_form_ppdu/I_piso/out_reg/CLK (SDFFX1)                 0.00      45.01 r
+  library hold time                                      -0.22      44.79
+  data required time                                                44.79
+  --------------------------------------------------------------------------
+  data required time                                                44.79
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: u_sm_I/wr_addr_reg[7]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_Q/bit_cnt_reg[0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_sm_I/wr_addr_reg[7]/CLK (SDFFX1)                      0.00 #    45.00 r
+  u_sm_I/wr_addr_reg[7]/QN (SDFFX1)                       0.39      45.39 f
+  u_sm_I/test_so (symbol_mapper_test_0)                   0.00      45.39 f
+  u_sm_Q/test_si (symbol_mapper_test_1)                   0.00      45.39 f
+  u_sm_Q/bit_cnt_reg[0]/SI (SDFFX1)                       0.03      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_sm_Q/bit_cnt_reg[0]/CLK (SDFFX1)                      0.00      45.01 r
+  library hold time                                      -0.22      44.79
+  data required time                                                44.79
+  --------------------------------------------------------------------------
+  data required time                                                44.79
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: u_sm_Q/wr_addr_reg[7]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_ram_I/data_out_reg[0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_sm_Q/wr_addr_reg[7]/CLK (SDFFX1)                      0.00 #    45.00 r
+  u_sm_Q/wr_addr_reg[7]/QN (SDFFX1)                       0.39      45.39 f
+  u_sm_Q/test_so (symbol_mapper_test_1)                   0.00      45.39 f
+  u_sm_ram_I/test_si1 (sm_ram_test_0)                     0.00      45.39 f
+  u_sm_ram_I/data_out_reg[0]/SI (SDFFX1)                  0.03      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_sm_ram_I/data_out_reg[0]/CLK (SDFFX1)                 0.00      45.01 r
+  library hold time                                      -0.22      44.79
+  data required time                                                44.79
+  --------------------------------------------------------------------------
+  data required time                                                44.79
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: u_mod_top/u_dqpsk/real_out_reg[1]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_payload_ram/mem_reg[0][0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_dqpsk/real_out_reg[1]/CLK (SDFFX1)          0.00 #    45.00 r
+  u_mod_top/u_dqpsk/real_out_reg[1]/QN (SDFFX1)           0.39      45.39 f
+  u_mod_top/u_dqpsk/test_so (dqpsk_encoder_test_1)        0.00      45.39 f
+  u_mod_top/test_so1 (qpsk_dqpsk_chirp_top_test_1)        0.00      45.39 f
+  u_payload_ram/test_si1 (payload_ram_test_1)             0.00      45.39 f
+  u_payload_ram/mem_reg[0][0]/SI (SDFFX1)                 0.03      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_payload_ram/mem_reg[0][0]/CLK (SDFFX1)                0.00      45.01 r
+  library hold time                                      -0.22      44.79
+  data required time                                                44.79
+  --------------------------------------------------------------------------
+  data required time                                                44.79
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.62
+
+
+  Startpoint: u_demux/o_valid_I_reg
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_demux/o_valid_Q_reg
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  demux_test_1       8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_demux/o_valid_I_reg/CLK (SDFFX1)       0.00 #    45.00 r
+  u_demux/o_valid_I_reg/QN (SDFFX1)        0.38      45.38 f
+  u_demux/o_valid_Q_reg/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                  45.42
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_demux/o_valid_Q_reg/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                       -0.21      44.80
+  data required time                                 44.80
+  -----------------------------------------------------------
+  data required time                                 44.80
+  data arrival time                                 -45.42
+  -----------------------------------------------------------
+  slack (MET)                                         0.63
+
+
+  Startpoint: u_demux/o_I_reg
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_demux/o_Q_reg
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  demux_test_1       8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_demux/o_I_reg/CLK (SDFFX1)             0.00 #    45.00 r
+  u_demux/o_I_reg/QN (SDFFX1)              0.38      45.38 f
+  u_demux/o_Q_reg/SI (SDFFX1)              0.04      45.42 f
+  data arrival time                                  45.42
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_demux/o_Q_reg/CLK (SDFFX1)             0.00      45.01 r
+  library hold time                       -0.21      44.80
+  data required time                                 44.80
+  -----------------------------------------------------------
+  data required time                                 44.80
+  data arrival time                                 -45.42
+  -----------------------------------------------------------
+  slack (MET)                                         0.63
+
+
+  Startpoint: u_demux/o_Q_reg
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_demux/o_valid_I_reg
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  demux_test_1       8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_demux/o_Q_reg/CLK (SDFFX1)             0.00 #    45.00 r
+  u_demux/o_Q_reg/QN (SDFFX1)              0.38      45.38 f
+  u_demux/o_valid_I_reg/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                  45.42
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_demux/o_valid_I_reg/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                       -0.21      44.80
+  data required time                                 44.80
+  -----------------------------------------------------------
+  data required time                                 44.80
+  data arrival time                                 -45.42
+  -----------------------------------------------------------
+  slack (MET)                                         0.63
+
+
+  Startpoint: u_form_ppdu/I_piso/out_reg
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_form_ppdu/I_piso/q_reg[0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  piso_DATA_WIDTH4_test_0
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_form_ppdu/I_piso/out_reg/CLK (SDFFX1)                 0.00 #    45.00 r
+  u_form_ppdu/I_piso/out_reg/QN (SDFFX1)                  0.38      45.38 f
+  u_form_ppdu/I_piso/q_reg[0]/SI (SDFFX1)                 0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_form_ppdu/I_piso/q_reg[0]/CLK (SDFFX1)                0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_form_ppdu/I_piso/q_reg[0]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_form_ppdu/I_piso/q_reg[1]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  piso_DATA_WIDTH4_test_0
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_form_ppdu/I_piso/q_reg[0]/CLK (SDFFX1)                0.00 #    45.00 r
+  u_form_ppdu/I_piso/q_reg[0]/QN (SDFFX1)                 0.38      45.38 f
+  u_form_ppdu/I_piso/q_reg[1]/SI (SDFFX1)                 0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_form_ppdu/I_piso/q_reg[1]/CLK (SDFFX1)                0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_form_ppdu/I_piso/q_reg[1]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_form_ppdu/I_piso/q_reg[2]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  piso_DATA_WIDTH4_test_0
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_form_ppdu/I_piso/q_reg[1]/CLK (SDFFX1)                0.00 #    45.00 r
+  u_form_ppdu/I_piso/q_reg[1]/QN (SDFFX1)                 0.38      45.38 f
+  u_form_ppdu/I_piso/q_reg[2]/SI (SDFFX1)                 0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_form_ppdu/I_piso/q_reg[2]/CLK (SDFFX1)                0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_form_ppdu/I_piso/q_reg[2]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_form_ppdu/I_piso/q_reg[3]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  piso_DATA_WIDTH4_test_0
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_form_ppdu/I_piso/q_reg[2]/CLK (SDFFX1)                0.00 #    45.00 r
+  u_form_ppdu/I_piso/q_reg[2]/QN (SDFFX1)                 0.38      45.38 f
+  u_form_ppdu/I_piso/q_reg[3]/SI (SDFFX1)                 0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_form_ppdu/I_piso/q_reg[3]/CLK (SDFFX1)                0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_form_ppdu/Q_piso/out_reg
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_form_ppdu/Q_piso/q_reg[0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  piso_DATA_WIDTH4_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_form_ppdu/Q_piso/out_reg/CLK (SDFFX1)                 0.00 #    45.00 r
+  u_form_ppdu/Q_piso/out_reg/QN (SDFFX1)                  0.38      45.38 f
+  u_form_ppdu/Q_piso/q_reg[0]/SI (SDFFX1)                 0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_form_ppdu/Q_piso/q_reg[0]/CLK (SDFFX1)                0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_form_ppdu/Q_piso/q_reg[0]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_form_ppdu/Q_piso/q_reg[1]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  piso_DATA_WIDTH4_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_form_ppdu/Q_piso/q_reg[0]/CLK (SDFFX1)                0.00 #    45.00 r
+  u_form_ppdu/Q_piso/q_reg[0]/QN (SDFFX1)                 0.38      45.38 f
+  u_form_ppdu/Q_piso/q_reg[1]/SI (SDFFX1)                 0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_form_ppdu/Q_piso/q_reg[1]/CLK (SDFFX1)                0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_form_ppdu/Q_piso/q_reg[1]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_form_ppdu/Q_piso/q_reg[2]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  piso_DATA_WIDTH4_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_form_ppdu/Q_piso/q_reg[1]/CLK (SDFFX1)                0.00 #    45.00 r
+  u_form_ppdu/Q_piso/q_reg[1]/QN (SDFFX1)                 0.38      45.38 f
+  u_form_ppdu/Q_piso/q_reg[2]/SI (SDFFX1)                 0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_form_ppdu/Q_piso/q_reg[2]/CLK (SDFFX1)                0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_form_ppdu/Q_piso/q_reg[2]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_form_ppdu/Q_piso/q_reg[3]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  piso_DATA_WIDTH4_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_form_ppdu/Q_piso/q_reg[2]/CLK (SDFFX1)                0.00 #    45.00 r
+  u_form_ppdu/Q_piso/q_reg[2]/QN (SDFFX1)                 0.38      45.38 f
+  u_form_ppdu/Q_piso/q_reg[3]/SI (SDFFX1)                 0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_form_ppdu/Q_piso/q_reg[3]/CLK (SDFFX1)                0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_dqpsk/real_out_reg[0]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_dqpsk/real_out_reg[1]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  dqpsk_encoder_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_dqpsk/real_out_reg[0]/CLK (SDFFX1)          0.00 #    45.00 r
+  u_mod_top/u_dqpsk/real_out_reg[0]/QN (SDFFX1)           0.38      45.38 f
+  u_mod_top/u_dqpsk/real_out_reg[1]/SI (SDFFX1)           0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_dqpsk/real_out_reg[1]/CLK (SDFFX1)          0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_dqpsk/imag_out_reg[1]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_dqpsk/ptr_reg[0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  dqpsk_encoder_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_dqpsk/imag_out_reg[1]/CLK (SDFFX1)          0.00 #    45.00 r
+  u_mod_top/u_dqpsk/imag_out_reg[1]/QN (SDFFX1)           0.38      45.38 f
+  u_mod_top/u_dqpsk/ptr_reg[0]/SI (SDFFX1)                0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_dqpsk/ptr_reg[0]/CLK (SDFFX1)               0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_dqpsk/imag_out_reg[0]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_dqpsk/imag_out_reg[1]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  dqpsk_encoder_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_dqpsk/imag_out_reg[0]/CLK (SDFFX1)          0.00 #    45.00 r
+  u_mod_top/u_dqpsk/imag_out_reg[0]/QN (SDFFX1)           0.38      45.38 f
+  u_mod_top/u_dqpsk/imag_out_reg[1]/SI (SDFFX1)           0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_dqpsk/imag_out_reg[1]/CLK (SDFFX1)          0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_dqpsk/buf_real_reg[3][1]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_dqpsk/imag_out_reg[0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  dqpsk_encoder_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_dqpsk/buf_real_reg[3][1]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_mod_top/u_dqpsk/buf_real_reg[3][1]/QN (SDFFX1)        0.38      45.38 f
+  u_mod_top/u_dqpsk/imag_out_reg[0]/SI (SDFFX1)           0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_dqpsk/imag_out_reg[0]/CLK (SDFFX1)          0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_dqpsk/buf_imag_reg[0][0]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_dqpsk/buf_imag_reg[0][1]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  dqpsk_encoder_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_dqpsk/buf_imag_reg[0][0]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_mod_top/u_dqpsk/buf_imag_reg[0][0]/QN (SDFFX1)        0.38      45.38 f
+  u_mod_top/u_dqpsk/buf_imag_reg[0][1]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_dqpsk/buf_imag_reg[0][1]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_dqpsk/buf_imag_reg[1][0]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_dqpsk/buf_imag_reg[1][1]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  dqpsk_encoder_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_dqpsk/buf_imag_reg[1][0]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_mod_top/u_dqpsk/buf_imag_reg[1][0]/QN (SDFFX1)        0.38      45.38 f
+  u_mod_top/u_dqpsk/buf_imag_reg[1][1]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_dqpsk/buf_imag_reg[1][1]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_dqpsk/buf_imag_reg[0][1]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_dqpsk/buf_imag_reg[1][0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  dqpsk_encoder_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_dqpsk/buf_imag_reg[0][1]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_mod_top/u_dqpsk/buf_imag_reg[0][1]/QN (SDFFX1)        0.38      45.38 f
+  u_mod_top/u_dqpsk/buf_imag_reg[1][0]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_dqpsk/buf_imag_reg[1][0]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_dqpsk/buf_imag_reg[2][0]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_dqpsk/buf_imag_reg[2][1]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  dqpsk_encoder_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_dqpsk/buf_imag_reg[2][0]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_mod_top/u_dqpsk/buf_imag_reg[2][0]/QN (SDFFX1)        0.38      45.38 f
+  u_mod_top/u_dqpsk/buf_imag_reg[2][1]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_dqpsk/buf_imag_reg[2][1]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_dqpsk/buf_imag_reg[1][1]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_dqpsk/buf_imag_reg[2][0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  dqpsk_encoder_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_dqpsk/buf_imag_reg[1][1]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_mod_top/u_dqpsk/buf_imag_reg[1][1]/QN (SDFFX1)        0.38      45.38 f
+  u_mod_top/u_dqpsk/buf_imag_reg[2][0]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_dqpsk/buf_imag_reg[2][0]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_dqpsk/buf_imag_reg[3][0]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_dqpsk/buf_imag_reg[3][1]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  dqpsk_encoder_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_dqpsk/buf_imag_reg[3][0]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_mod_top/u_dqpsk/buf_imag_reg[3][0]/QN (SDFFX1)        0.38      45.38 f
+  u_mod_top/u_dqpsk/buf_imag_reg[3][1]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_dqpsk/buf_imag_reg[3][1]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_dqpsk/buf_imag_reg[2][1]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_dqpsk/buf_imag_reg[3][0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  dqpsk_encoder_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_dqpsk/buf_imag_reg[2][1]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_mod_top/u_dqpsk/buf_imag_reg[2][1]/QN (SDFFX1)        0.38      45.38 f
+  u_mod_top/u_dqpsk/buf_imag_reg[3][0]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_dqpsk/buf_imag_reg[3][0]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_dqpsk/buf_real_reg[0][0]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_dqpsk/buf_real_reg[0][1]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  dqpsk_encoder_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_dqpsk/buf_real_reg[0][0]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_mod_top/u_dqpsk/buf_real_reg[0][0]/QN (SDFFX1)        0.38      45.38 f
+  u_mod_top/u_dqpsk/buf_real_reg[0][1]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_dqpsk/buf_real_reg[0][1]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_dqpsk/buf_imag_reg[3][1]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_dqpsk/buf_real_reg[0][0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  dqpsk_encoder_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_dqpsk/buf_imag_reg[3][1]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_mod_top/u_dqpsk/buf_imag_reg[3][1]/QN (SDFFX1)        0.38      45.38 f
+  u_mod_top/u_dqpsk/buf_real_reg[0][0]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_dqpsk/buf_real_reg[0][0]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_dqpsk/buf_real_reg[1][0]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_dqpsk/buf_real_reg[1][1]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  dqpsk_encoder_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_dqpsk/buf_real_reg[1][0]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_mod_top/u_dqpsk/buf_real_reg[1][0]/QN (SDFFX1)        0.38      45.38 f
+  u_mod_top/u_dqpsk/buf_real_reg[1][1]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_dqpsk/buf_real_reg[1][1]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_dqpsk/buf_real_reg[0][1]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_dqpsk/buf_real_reg[1][0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  dqpsk_encoder_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_dqpsk/buf_real_reg[0][1]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_mod_top/u_dqpsk/buf_real_reg[0][1]/QN (SDFFX1)        0.38      45.38 f
+  u_mod_top/u_dqpsk/buf_real_reg[1][0]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_dqpsk/buf_real_reg[1][0]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_dqpsk/buf_real_reg[2][0]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_dqpsk/buf_real_reg[2][1]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  dqpsk_encoder_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_dqpsk/buf_real_reg[2][0]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_mod_top/u_dqpsk/buf_real_reg[2][0]/QN (SDFFX1)        0.38      45.38 f
+  u_mod_top/u_dqpsk/buf_real_reg[2][1]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_dqpsk/buf_real_reg[2][1]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_dqpsk/buf_real_reg[1][1]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_dqpsk/buf_real_reg[2][0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  dqpsk_encoder_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_dqpsk/buf_real_reg[1][1]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_mod_top/u_dqpsk/buf_real_reg[1][1]/QN (SDFFX1)        0.38      45.38 f
+  u_mod_top/u_dqpsk/buf_real_reg[2][0]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_dqpsk/buf_real_reg[2][0]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_dqpsk/buf_real_reg[3][0]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_dqpsk/buf_real_reg[3][1]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  dqpsk_encoder_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_dqpsk/buf_real_reg[3][0]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_mod_top/u_dqpsk/buf_real_reg[3][0]/QN (SDFFX1)        0.38      45.38 f
+  u_mod_top/u_dqpsk/buf_real_reg[3][1]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_dqpsk/buf_real_reg[3][1]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_dqpsk/buf_real_reg[2][1]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_dqpsk/buf_real_reg[3][0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  dqpsk_encoder_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_dqpsk/buf_real_reg[2][1]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_mod_top/u_dqpsk/buf_real_reg[2][1]/QN (SDFFX1)        0.38      45.38 f
+  u_mod_top/u_dqpsk/buf_real_reg[3][0]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_dqpsk/buf_real_reg[3][0]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_sm_I/data_out_reg[3]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_I/en_w_reg
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_0
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_I/data_out_reg[3]/CLK (SDFFX1)      0.00 #    45.00 r
+  u_sm_I/data_out_reg[3]/QN (SDFFX1)       0.38      45.38 f
+  u_sm_I/en_w_reg/SI (SDFFX1)              0.04      45.42 f
+  data arrival time                                  45.42
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_I/en_w_reg/CLK (SDFFX1)             0.00      45.01 r
+  library hold time                       -0.21      44.80
+  data required time                                 44.80
+  -----------------------------------------------------------
+  data required time                                 44.80
+  data arrival time                                 -45.42
+  -----------------------------------------------------------
+  slack (MET)                                         0.63
+
+
+  Startpoint: u_sm_I/data_out_reg[2]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_I/data_out_reg[3]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_0
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_I/data_out_reg[2]/CLK (SDFFX1)      0.00 #    45.00 r
+  u_sm_I/data_out_reg[2]/QN (SDFFX1)       0.38      45.38 f
+  u_sm_I/data_out_reg[3]/SI (SDFFX1)       0.04      45.42 f
+  data arrival time                                  45.42
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_I/data_out_reg[3]/CLK (SDFFX1)      0.00      45.01 r
+  library hold time                       -0.21      44.80
+  data required time                                 44.80
+  -----------------------------------------------------------
+  data required time                                 44.80
+  data arrival time                                 -45.42
+  -----------------------------------------------------------
+  slack (MET)                                         0.63
+
+
+  Startpoint: u_sm_I/data_out_reg[0]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_I/data_out_reg[1]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_0
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_I/data_out_reg[0]/CLK (SDFFX1)      0.00 #    45.00 r
+  u_sm_I/data_out_reg[0]/QN (SDFFX1)       0.38      45.38 f
+  u_sm_I/data_out_reg[1]/SI (SDFFX1)       0.04      45.42 f
+  data arrival time                                  45.42
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_I/data_out_reg[1]/CLK (SDFFX1)      0.00      45.01 r
+  library hold time                       -0.21      44.80
+  data required time                                 44.80
+  -----------------------------------------------------------
+  data required time                                 44.80
+  data arrival time                                 -45.42
+  -----------------------------------------------------------
+  slack (MET)                                         0.63
+
+
+  Startpoint: u_sm_I/wr_addr_reg[0]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_I/wr_addr_reg[1]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_0
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_I/wr_addr_reg[0]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_sm_I/wr_addr_reg[0]/QN (SDFFX1)        0.38      45.38 f
+  u_sm_I/wr_addr_reg[1]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                  45.42
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_I/wr_addr_reg[1]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                       -0.21      44.80
+  data required time                                 44.80
+  -----------------------------------------------------------
+  data required time                                 44.80
+  data arrival time                                 -45.42
+  -----------------------------------------------------------
+  slack (MET)                                         0.63
+
+
+  Startpoint: u_sm_I/wr_addr_reg[1]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_I/wr_addr_reg[2]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_0
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_I/wr_addr_reg[1]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_sm_I/wr_addr_reg[1]/QN (SDFFX1)        0.38      45.38 f
+  u_sm_I/wr_addr_reg[2]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                  45.42
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_I/wr_addr_reg[2]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                       -0.21      44.80
+  data required time                                 44.80
+  -----------------------------------------------------------
+  data required time                                 44.80
+  data arrival time                                 -45.42
+  -----------------------------------------------------------
+  slack (MET)                                         0.63
+
+
+  Startpoint: u_sm_I/wr_addr_reg[2]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_I/wr_addr_reg[3]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_0
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_I/wr_addr_reg[2]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_sm_I/wr_addr_reg[2]/QN (SDFFX1)        0.38      45.38 f
+  u_sm_I/wr_addr_reg[3]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                  45.42
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_I/wr_addr_reg[3]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                       -0.21      44.80
+  data required time                                 44.80
+  -----------------------------------------------------------
+  data required time                                 44.80
+  data arrival time                                 -45.42
+  -----------------------------------------------------------
+  slack (MET)                                         0.63
+
+
+  Startpoint: u_sm_I/wr_addr_reg[3]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_I/wr_addr_reg[4]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_0
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_I/wr_addr_reg[3]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_sm_I/wr_addr_reg[3]/QN (SDFFX1)        0.38      45.38 f
+  u_sm_I/wr_addr_reg[4]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                  45.42
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_I/wr_addr_reg[4]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                       -0.21      44.80
+  data required time                                 44.80
+  -----------------------------------------------------------
+  data required time                                 44.80
+  data arrival time                                 -45.42
+  -----------------------------------------------------------
+  slack (MET)                                         0.63
+
+
+  Startpoint: u_sm_I/wr_addr_reg[4]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_I/wr_addr_reg[5]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_0
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_I/wr_addr_reg[4]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_sm_I/wr_addr_reg[4]/QN (SDFFX1)        0.38      45.38 f
+  u_sm_I/wr_addr_reg[5]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                  45.42
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_I/wr_addr_reg[5]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                       -0.21      44.80
+  data required time                                 44.80
+  -----------------------------------------------------------
+  data required time                                 44.80
+  data arrival time                                 -45.42
+  -----------------------------------------------------------
+  slack (MET)                                         0.63
+
+
+  Startpoint: u_sm_I/wr_addr_reg[5]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_I/wr_addr_reg[6]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_0
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_I/wr_addr_reg[5]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_sm_I/wr_addr_reg[5]/QN (SDFFX1)        0.38      45.38 f
+  u_sm_I/wr_addr_reg[6]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                  45.42
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_I/wr_addr_reg[6]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                       -0.21      44.80
+  data required time                                 44.80
+  -----------------------------------------------------------
+  data required time                                 44.80
+  data arrival time                                 -45.42
+  -----------------------------------------------------------
+  slack (MET)                                         0.63
+
+
+  Startpoint: u_sm_I/wr_addr_reg[6]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_I/wr_addr_reg[7]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_0
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_I/wr_addr_reg[6]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_sm_I/wr_addr_reg[6]/QN (SDFFX1)        0.38      45.38 f
+  u_sm_I/wr_addr_reg[7]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                  45.42
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_I/wr_addr_reg[7]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                       -0.21      44.80
+  data required time                                 44.80
+  -----------------------------------------------------------
+  data required time                                 44.80
+  data arrival time                                 -45.42
+  -----------------------------------------------------------
+  slack (MET)                                         0.63
+
+
+  Startpoint: u_sm_Q/data_out_reg[3]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_Q/en_w_reg
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_1
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_Q/data_out_reg[3]/CLK (SDFFX1)      0.00 #    45.00 r
+  u_sm_Q/data_out_reg[3]/QN (SDFFX1)       0.38      45.38 f
+  u_sm_Q/en_w_reg/SI (SDFFX1)              0.04      45.42 f
+  data arrival time                                  45.42
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_Q/en_w_reg/CLK (SDFFX1)             0.00      45.01 r
+  library hold time                       -0.21      44.80
+  data required time                                 44.80
+  -----------------------------------------------------------
+  data required time                                 44.80
+  data arrival time                                 -45.42
+  -----------------------------------------------------------
+  slack (MET)                                         0.63
+
+
+  Startpoint: u_sm_Q/data_out_reg[1]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_Q/data_out_reg[2]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_1
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_Q/data_out_reg[1]/CLK (SDFFX1)      0.00 #    45.00 r
+  u_sm_Q/data_out_reg[1]/QN (SDFFX1)       0.38      45.38 f
+  u_sm_Q/data_out_reg[2]/SI (SDFFX1)       0.04      45.42 f
+  data arrival time                                  45.42
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_Q/data_out_reg[2]/CLK (SDFFX1)      0.00      45.01 r
+  library hold time                       -0.21      44.80
+  data required time                                 44.80
+  -----------------------------------------------------------
+  data required time                                 44.80
+  data arrival time                                 -45.42
+  -----------------------------------------------------------
+  slack (MET)                                         0.63
+
+
+  Startpoint: u_sm_Q/wr_addr_reg[0]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_Q/wr_addr_reg[1]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_1
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_Q/wr_addr_reg[0]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_sm_Q/wr_addr_reg[0]/QN (SDFFX1)        0.38      45.38 f
+  u_sm_Q/wr_addr_reg[1]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                  45.42
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_Q/wr_addr_reg[1]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                       -0.21      44.80
+  data required time                                 44.80
+  -----------------------------------------------------------
+  data required time                                 44.80
+  data arrival time                                 -45.42
+  -----------------------------------------------------------
+  slack (MET)                                         0.63
+
+
+  Startpoint: u_sm_Q/wr_addr_reg[1]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_Q/wr_addr_reg[2]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_1
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_Q/wr_addr_reg[1]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_sm_Q/wr_addr_reg[1]/QN (SDFFX1)        0.38      45.38 f
+  u_sm_Q/wr_addr_reg[2]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                  45.42
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_Q/wr_addr_reg[2]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                       -0.21      44.80
+  data required time                                 44.80
+  -----------------------------------------------------------
+  data required time                                 44.80
+  data arrival time                                 -45.42
+  -----------------------------------------------------------
+  slack (MET)                                         0.63
+
+
+  Startpoint: u_sm_Q/wr_addr_reg[2]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_Q/wr_addr_reg[3]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_1
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_Q/wr_addr_reg[2]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_sm_Q/wr_addr_reg[2]/QN (SDFFX1)        0.38      45.38 f
+  u_sm_Q/wr_addr_reg[3]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                  45.42
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_Q/wr_addr_reg[3]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                       -0.21      44.80
+  data required time                                 44.80
+  -----------------------------------------------------------
+  data required time                                 44.80
+  data arrival time                                 -45.42
+  -----------------------------------------------------------
+  slack (MET)                                         0.63
+
+
+  Startpoint: u_sm_Q/wr_addr_reg[3]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_Q/wr_addr_reg[4]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_1
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_Q/wr_addr_reg[3]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_sm_Q/wr_addr_reg[3]/QN (SDFFX1)        0.38      45.38 f
+  u_sm_Q/wr_addr_reg[4]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                  45.42
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_Q/wr_addr_reg[4]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                       -0.21      44.80
+  data required time                                 44.80
+  -----------------------------------------------------------
+  data required time                                 44.80
+  data arrival time                                 -45.42
+  -----------------------------------------------------------
+  slack (MET)                                         0.63
+
+
+  Startpoint: u_sm_Q/wr_addr_reg[4]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_Q/wr_addr_reg[5]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_1
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_Q/wr_addr_reg[4]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_sm_Q/wr_addr_reg[4]/QN (SDFFX1)        0.38      45.38 f
+  u_sm_Q/wr_addr_reg[5]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                  45.42
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_Q/wr_addr_reg[5]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                       -0.21      44.80
+  data required time                                 44.80
+  -----------------------------------------------------------
+  data required time                                 44.80
+  data arrival time                                 -45.42
+  -----------------------------------------------------------
+  slack (MET)                                         0.63
+
+
+  Startpoint: u_sm_Q/wr_addr_reg[5]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_Q/wr_addr_reg[6]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_1
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_Q/wr_addr_reg[5]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_sm_Q/wr_addr_reg[5]/QN (SDFFX1)        0.38      45.38 f
+  u_sm_Q/wr_addr_reg[6]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                  45.42
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_Q/wr_addr_reg[6]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                       -0.21      44.80
+  data required time                                 44.80
+  -----------------------------------------------------------
+  data required time                                 44.80
+  data arrival time                                 -45.42
+  -----------------------------------------------------------
+  slack (MET)                                         0.63
+
+
+  Startpoint: u_sm_Q/wr_addr_reg[6]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_Q/wr_addr_reg[7]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_1
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_Q/wr_addr_reg[6]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_sm_Q/wr_addr_reg[6]/QN (SDFFX1)        0.38      45.38 f
+  u_sm_Q/wr_addr_reg[7]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                  45.42
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_Q/wr_addr_reg[7]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                       -0.21      44.80
+  data required time                                 44.80
+  -----------------------------------------------------------
+  data required time                                 44.80
+  data arrival time                                 -45.42
+  -----------------------------------------------------------
+  slack (MET)                                         0.63
+
+
+  Startpoint: u_zp/latched_payload_length_reg[4]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_zp/latched_payload_length_reg[5]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  zero_padder_test_1 8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_zp/latched_payload_length_reg[4]/CLK (SDFFX1)         0.00 #    45.00 r
+  u_zp/latched_payload_length_reg[4]/QN (SDFFX1)          0.38      45.38 f
+  u_zp/latched_payload_length_reg[5]/SI (SDFFX1)          0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_zp/latched_payload_length_reg[5]/CLK (SDFFX1)         0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_zp/latched_payload_length_reg[3]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_zp/latched_payload_length_reg[4]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  zero_padder_test_1 8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_zp/latched_payload_length_reg[3]/CLK (SDFFX1)         0.00 #    45.00 r
+  u_zp/latched_payload_length_reg[3]/QN (SDFFX1)          0.38      45.38 f
+  u_zp/latched_payload_length_reg[4]/SI (SDFFX1)          0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_zp/latched_payload_length_reg[4]/CLK (SDFFX1)         0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_zp/latched_payload_length_reg[2]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_zp/latched_payload_length_reg[3]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  zero_padder_test_1 8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_zp/latched_payload_length_reg[2]/CLK (SDFFX1)         0.00 #    45.00 r
+  u_zp/latched_payload_length_reg[2]/QN (SDFFX1)          0.38      45.38 f
+  u_zp/latched_payload_length_reg[3]/SI (SDFFX1)          0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_zp/latched_payload_length_reg[3]/CLK (SDFFX1)         0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_zp/o_invalid_bit_reg
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_zp/o_ram_address_reg[0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  zero_padder_test_1 8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_zp/o_invalid_bit_reg/CLK (SDFFX1)                     0.00 #    45.00 r
+  u_zp/o_invalid_bit_reg/QN (SDFFX1)                      0.38      45.38 f
+  u_zp/o_ram_address_reg[0]/SI (SDFFX1)                   0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_zp/o_ram_address_reg[0]/CLK (SDFFX1)                  0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_zp/byte_holder_reg[0]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_zp/byte_holder_reg[1]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  zero_padder_test_1 8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_zp/byte_holder_reg[0]/CLK (SDFFX1)                    0.00 #    45.00 r
+  u_zp/byte_holder_reg[0]/QN (SDFFX1)                     0.38      45.38 f
+  u_zp/byte_holder_reg[1]/SI (SDFFX1)                     0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_zp/byte_holder_reg[1]/CLK (SDFFX1)                    0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_zp/byte_holder_reg[1]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_zp/byte_holder_reg[2]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  zero_padder_test_1 8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_zp/byte_holder_reg[1]/CLK (SDFFX1)                    0.00 #    45.00 r
+  u_zp/byte_holder_reg[1]/QN (SDFFX1)                     0.38      45.38 f
+  u_zp/byte_holder_reg[2]/SI (SDFFX1)                     0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_zp/byte_holder_reg[2]/CLK (SDFFX1)                    0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_zp/byte_holder_reg[2]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_zp/byte_holder_reg[3]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  zero_padder_test_1 8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_zp/byte_holder_reg[2]/CLK (SDFFX1)                    0.00 #    45.00 r
+  u_zp/byte_holder_reg[2]/QN (SDFFX1)                     0.38      45.38 f
+  u_zp/byte_holder_reg[3]/SI (SDFFX1)                     0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_zp/byte_holder_reg[3]/CLK (SDFFX1)                    0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_zp/byte_holder_reg[3]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_zp/byte_holder_reg[4]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  zero_padder_test_1 8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_zp/byte_holder_reg[3]/CLK (SDFFX1)                    0.00 #    45.00 r
+  u_zp/byte_holder_reg[3]/QN (SDFFX1)                     0.38      45.38 f
+  u_zp/byte_holder_reg[4]/SI (SDFFX1)                     0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_zp/byte_holder_reg[4]/CLK (SDFFX1)                    0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_zp/byte_holder_reg[4]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_zp/byte_holder_reg[5]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  zero_padder_test_1 8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_zp/byte_holder_reg[4]/CLK (SDFFX1)                    0.00 #    45.00 r
+  u_zp/byte_holder_reg[4]/QN (SDFFX1)                     0.38      45.38 f
+  u_zp/byte_holder_reg[5]/SI (SDFFX1)                     0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_zp/byte_holder_reg[5]/CLK (SDFFX1)                    0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_zp/byte_holder_reg[5]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_zp/byte_holder_reg[6]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  zero_padder_test_1 8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_zp/byte_holder_reg[5]/CLK (SDFFX1)                    0.00 #    45.00 r
+  u_zp/byte_holder_reg[5]/QN (SDFFX1)                     0.38      45.38 f
+  u_zp/byte_holder_reg[6]/SI (SDFFX1)                     0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_zp/byte_holder_reg[6]/CLK (SDFFX1)                    0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_zp/byte_holder_reg[6]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_zp/byte_holder_reg[7]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  zero_padder_test_1 8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_zp/byte_holder_reg[6]/CLK (SDFFX1)                    0.00 #    45.00 r
+  u_zp/byte_holder_reg[6]/QN (SDFFX1)                     0.38      45.38 f
+  u_zp/byte_holder_reg[7]/SI (SDFFX1)                     0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_zp/byte_holder_reg[7]/CLK (SDFFX1)                    0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_zp/latched_payload_length_reg[7]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_zp/o_invalid_bit_reg
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  zero_padder_test_1 8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_zp/latched_payload_length_reg[7]/CLK (SDFFX1)         0.00 #    45.00 r
+  u_zp/latched_payload_length_reg[7]/QN (SDFFX1)          0.38      45.38 f
+  u_zp/o_invalid_bit_reg/SI (SDFFX1)                      0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_zp/o_invalid_bit_reg/CLK (SDFFX1)                     0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_chirp/sn_req_reg
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_chirp/state_reg[0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  chirp_modulation_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_chirp/sn_req_reg/CLK (SDFFX1)               0.00 #    45.00 r
+  u_mod_top/u_chirp/sn_req_reg/QN (SDFFX1)                0.38      45.38 f
+  u_mod_top/u_chirp/state_reg[0]/SI (SDFFX1)              0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_chirp/state_reg[0]/CLK (SDFFX1)             0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_chirp/sample_idx_reg[4]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_chirp/sample_idx_reg[5]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  chirp_modulation_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_chirp/sample_idx_reg[4]/CLK (SDFFX1)        0.00 #    45.00 r
+  u_mod_top/u_chirp/sample_idx_reg[4]/QN (SDFFX1)         0.38      45.38 f
+  u_mod_top/u_chirp/sample_idx_reg[5]/SI (SDFFX1)         0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_chirp/sample_idx_reg[5]/CLK (SDFFX1)        0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_chirp/sample_idx_reg[1]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_chirp/sample_idx_reg[2]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  chirp_modulation_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_chirp/sample_idx_reg[1]/CLK (SDFFX1)        0.00 #    45.00 r
+  u_mod_top/u_chirp/sample_idx_reg[1]/QN (SDFFX1)         0.38      45.38 f
+  u_mod_top/u_chirp/sample_idx_reg[2]/SI (SDFFX1)         0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_chirp/sample_idx_reg[2]/CLK (SDFFX1)        0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_chirp/sample_idx_reg[2]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_chirp/sample_idx_reg[3]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  chirp_modulation_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_chirp/sample_idx_reg[2]/CLK (SDFFX1)        0.00 #    45.00 r
+  u_mod_top/u_chirp/sample_idx_reg[2]/QN (SDFFX1)         0.38      45.38 f
+  u_mod_top/u_chirp/sample_idx_reg[3]/SI (SDFFX1)         0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_chirp/sample_idx_reg[3]/CLK (SDFFX1)        0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_chirp/sample_idx_reg[3]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_chirp/sample_idx_reg[4]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  chirp_modulation_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_chirp/sample_idx_reg[3]/CLK (SDFFX1)        0.00 #    45.00 r
+  u_mod_top/u_chirp/sample_idx_reg[3]/QN (SDFFX1)         0.38      45.38 f
+  u_mod_top/u_chirp/sample_idx_reg[4]/SI (SDFFX1)         0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_chirp/sample_idx_reg[4]/CLK (SDFFX1)        0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_chirp/gap_cnt_reg[6]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_chirp/group_parity_reg
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  chirp_modulation_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_chirp/gap_cnt_reg[6]/CLK (SDFFX1)           0.00 #    45.00 r
+  u_mod_top/u_chirp/gap_cnt_reg[6]/QN (SDFFX1)            0.38      45.38 f
+  u_mod_top/u_chirp/group_parity_reg/SI (SDFFX1)          0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_chirp/group_parity_reg/CLK (SDFFX1)         0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_chirp/state_reg[1]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_chirp/subchirp_idx_reg[0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  chirp_modulation_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_chirp/state_reg[1]/CLK (SDFFX1)             0.00 #    45.00 r
+  u_mod_top/u_chirp/state_reg[1]/QN (SDFFX1)              0.38      45.38 f
+  u_mod_top/u_chirp/subchirp_idx_reg[0]/SI (SDFFX1)       0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_chirp/subchirp_idx_reg[0]/CLK (SDFFX1)      0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_chirp/gap_cnt_reg[5]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_chirp/gap_cnt_reg[6]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  chirp_modulation_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_chirp/gap_cnt_reg[5]/CLK (SDFFX1)           0.00 #    45.00 r
+  u_mod_top/u_chirp/gap_cnt_reg[5]/QN (SDFFX1)            0.38      45.38 f
+  u_mod_top/u_chirp/gap_cnt_reg[6]/SI (SDFFX1)            0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_chirp/gap_cnt_reg[6]/CLK (SDFFX1)           0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_chirp/done_mod_reg
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_chirp/gap_cnt_reg[0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  chirp_modulation_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_chirp/done_mod_reg/CLK (SDFFX1)             0.00 #    45.00 r
+  u_mod_top/u_chirp/done_mod_reg/QN (SDFFX1)              0.38      45.38 f
+  u_mod_top/u_chirp/gap_cnt_reg[0]/SI (SDFFX1)            0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_chirp/gap_cnt_reg[0]/CLK (SDFFX1)           0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_chirp/gap_cnt_reg[1]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_chirp/gap_cnt_reg[2]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  chirp_modulation_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_chirp/gap_cnt_reg[1]/CLK (SDFFX1)           0.00 #    45.00 r
+  u_mod_top/u_chirp/gap_cnt_reg[1]/QN (SDFFX1)            0.38      45.38 f
+  u_mod_top/u_chirp/gap_cnt_reg[2]/SI (SDFFX1)            0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_chirp/gap_cnt_reg[2]/CLK (SDFFX1)           0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_chirp/gap_cnt_reg[2]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_chirp/gap_cnt_reg[3]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  chirp_modulation_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_chirp/gap_cnt_reg[2]/CLK (SDFFX1)           0.00 #    45.00 r
+  u_mod_top/u_chirp/gap_cnt_reg[2]/QN (SDFFX1)            0.38      45.38 f
+  u_mod_top/u_chirp/gap_cnt_reg[3]/SI (SDFFX1)            0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_chirp/gap_cnt_reg[3]/CLK (SDFFX1)           0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_chirp/gap_cnt_reg[3]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_chirp/gap_cnt_reg[4]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  chirp_modulation_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_chirp/gap_cnt_reg[3]/CLK (SDFFX1)           0.00 #    45.00 r
+  u_mod_top/u_chirp/gap_cnt_reg[3]/QN (SDFFX1)            0.38      45.38 f
+  u_mod_top/u_chirp/gap_cnt_reg[4]/SI (SDFFX1)            0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_chirp/gap_cnt_reg[4]/CLK (SDFFX1)           0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_chirp/gap_cnt_reg[4]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_chirp/gap_cnt_reg[5]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  chirp_modulation_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_chirp/gap_cnt_reg[4]/CLK (SDFFX1)           0.00 #    45.00 r
+  u_mod_top/u_chirp/gap_cnt_reg[4]/QN (SDFFX1)            0.38      45.38 f
+  u_mod_top/u_chirp/gap_cnt_reg[5]/SI (SDFFX1)            0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_chirp/gap_cnt_reg[5]/CLK (SDFFX1)           0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/sn_valid_d_reg
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_chirp/Tx_imag_reg[0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  qpsk_dqpsk_chirp_top_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/sn_valid_d_reg/CLK (SDFFX1)                   0.00 #    45.00 r
+  u_mod_top/sn_valid_d_reg/QN (SDFFX1)                    0.38      45.38 f
+  u_mod_top/u_chirp/test_si1 (chirp_modulation_test_1)
+                                                          0.00      45.38 f
+  u_mod_top/u_chirp/Tx_imag_reg[0]/SI (SDFFX1)            0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_chirp/Tx_imag_reg[0]/CLK (SDFFX1)           0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_mod_top/u_chirp/sample_idx_reg[5]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_chirp/sn_req_reg
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  chirp_modulation_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_chirp/sample_idx_reg[5]/CLK (SDFFX1)        0.00 #    45.00 r
+  u_mod_top/u_chirp/sample_idx_reg[5]/QN (SDFFX1)         0.38      45.38 f
+  u_mod_top/u_chirp/sn_req_reg/SI (SDFFX1)                0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_chirp/sn_req_reg/CLK (SDFFX1)               0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_ctrl_fsm/req_cnt_reg_reg[0]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_ctrl_fsm/req_cnt_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  master_ctrl_fsm_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_ctrl_fsm/req_cnt_reg_reg[0]/CLK (SDFFX1)              0.00 #    45.00 r
+  u_ctrl_fsm/req_cnt_reg_reg[0]/QN (SDFFX1)               0.38      45.38 f
+  u_ctrl_fsm/req_cnt_reg_reg[1]/SI (SDFFX1)               0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_ctrl_fsm/req_cnt_reg_reg[1]/CLK (SDFFX1)              0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_ctrl_fsm/req_cnt_reg_reg[1]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_ctrl_fsm/sm_ram_rd_addr_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  master_ctrl_fsm_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_ctrl_fsm/req_cnt_reg_reg[1]/CLK (SDFFX1)              0.00 #    45.00 r
+  u_ctrl_fsm/req_cnt_reg_reg[1]/QN (SDFFX1)               0.38      45.38 f
+  u_ctrl_fsm/sm_ram_rd_addr_reg_reg[0]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_ctrl_fsm/sm_ram_rd_addr_reg_reg[0]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_ctrl_fsm/sm_ram_rd_addr_reg_reg[6]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_ctrl_fsm/sm_ram_rd_addr_reg_reg[7]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  master_ctrl_fsm_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_ctrl_fsm/sm_ram_rd_addr_reg_reg[6]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_ctrl_fsm/sm_ram_rd_addr_reg_reg[6]/QN (SDFFX1)        0.38      45.38 f
+  u_ctrl_fsm/sm_ram_rd_addr_reg_reg[7]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_ctrl_fsm/sm_ram_rd_addr_reg_reg[7]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_ctrl_fsm/sm_ram_rd_addr_reg_reg[5]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_ctrl_fsm/sm_ram_rd_addr_reg_reg[6]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  master_ctrl_fsm_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_ctrl_fsm/sm_ram_rd_addr_reg_reg[5]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_ctrl_fsm/sm_ram_rd_addr_reg_reg[5]/QN (SDFFX1)        0.38      45.38 f
+  u_ctrl_fsm/sm_ram_rd_addr_reg_reg[6]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_ctrl_fsm/sm_ram_rd_addr_reg_reg[6]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_ctrl_fsm/sm_ram_rd_addr_reg_reg[4]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_ctrl_fsm/sm_ram_rd_addr_reg_reg[5]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  master_ctrl_fsm_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_ctrl_fsm/sm_ram_rd_addr_reg_reg[4]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_ctrl_fsm/sm_ram_rd_addr_reg_reg[4]/QN (SDFFX1)        0.38      45.38 f
+  u_ctrl_fsm/sm_ram_rd_addr_reg_reg[5]/SI (SDFFX1)        0.04      45.42 f
+  data arrival time                                                 45.42
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_ctrl_fsm/sm_ram_rd_addr_reg_reg[5]/CLK (SDFFX1)       0.00      45.01 r
+  library hold time                                      -0.21      44.80
+  data required time                                                44.80
+  --------------------------------------------------------------------------
+  data required time                                                44.80
+  data arrival time                                                -45.42
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.63
+
+
+  Startpoint: u_form_ppdu/Q_piso/valid_reg
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/sn_valid_d_reg
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_form_ppdu/Q_piso/valid_reg/CLK (SDFFSSRX1)            0.00 #    45.00 r
+  u_form_ppdu/Q_piso/valid_reg/QN (SDFFSSRX1)             0.42      45.42 f
+  u_form_ppdu/Q_piso/test_so (piso_DATA_WIDTH4_test_1)
+                                                          0.00      45.42 f
+  u_form_ppdu/test_so (form_ppdu_DATA_WIDTH4_ADDR_WIDTH4_test_1)
+                                                          0.00      45.42 f
+  u_mod_top/test_si1 (qpsk_dqpsk_chirp_top_test_1)        0.00      45.42 f
+  u_mod_top/sn_valid_d_reg/SI (SDFFX1)                    0.03      45.45 f
+  data arrival time                                                 45.45
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/sn_valid_d_reg/CLK (SDFFX1)                   0.00      45.01 r
+  library hold time                                      -0.22      44.79
+  data required time                                                44.79
+  --------------------------------------------------------------------------
+  data required time                                                44.79
+  data arrival time                                                -45.45
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.66
+
+
+  Startpoint: u_form_ppdu/I_piso/valid_reg
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_form_ppdu/Q_piso/out_reg
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  form_ppdu_DATA_WIDTH4_ADDR_WIDTH4_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_form_ppdu/I_piso/valid_reg/CLK (SDFFSSRX1)            0.00 #    45.00 r
+  u_form_ppdu/I_piso/valid_reg/QN (SDFFSSRX1)             0.42      45.42 f
+  u_form_ppdu/I_piso/test_so (piso_DATA_WIDTH4_test_0)
+                                                          0.00      45.42 f
+  u_form_ppdu/Q_piso/test_si (piso_DATA_WIDTH4_test_1)
+                                                          0.00      45.42 f
+  u_form_ppdu/Q_piso/out_reg/SI (SDFFX1)                  0.04      45.46 f
+  data arrival time                                                 45.46
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_form_ppdu/Q_piso/out_reg/CLK (SDFFX1)                 0.00      45.01 r
+  library hold time                                      -0.22      44.79
+  data required time                                                44.79
+  --------------------------------------------------------------------------
+  data required time                                                44.79
+  data arrival time                                                -45.46
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.66
+
+
+  Startpoint: u_ctrl_fsm/preample_sfd_rom_rd_addr_reg_reg[3]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_ctrl_fsm/ready_for_IQ_d_reg
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  master_ctrl_fsm_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_ctrl_fsm/preample_sfd_rom_rd_addr_reg_reg[3]/CLK (SDFFX1)
+                                                          0.00 #    45.00 r
+  u_ctrl_fsm/preample_sfd_rom_rd_addr_reg_reg[3]/QN (SDFFX1)
+                                                          0.39      45.39 f
+  u_ctrl_fsm/ready_for_IQ_d_reg/SI (SDFFSSRX1)            0.15      45.54 f
+  data arrival time                                                 45.54
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_ctrl_fsm/ready_for_IQ_d_reg/CLK (SDFFSSRX1)           0.00      45.01 r
+  library hold time                                      -0.16      44.85
+  data required time                                                44.85
+  --------------------------------------------------------------------------
+  data required time                                                44.85
+  data arrival time                                                -45.54
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.70
+
+
+  Startpoint: u_zp/o_serial_reg
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_zp/state_reg[0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  zero_padder_test_1 8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_zp/o_serial_reg/CLK (SDFFX1)           0.00 #    45.00 r
+  u_zp/o_serial_reg/QN (SDFFX1)            0.39      45.39 f
+  u_zp/state_reg[0]/SI (SDFFX1)            0.15      45.54 f
+  data arrival time                                  45.54
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_zp/state_reg[0]/CLK (SDFFX1)           0.00      45.01 r
+  library hold time                       -0.22      44.79
+  data required time                                 44.79
+  -----------------------------------------------------------
+  data required time                                 44.79
+  data arrival time                                 -45.54
+  -----------------------------------------------------------
+  slack (MET)                                         0.75
+
+
+  Startpoint: u_zp/latched_payload_length_reg[5]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_zp/latched_payload_length_reg[6]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  zero_padder_test_1 8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_zp/latched_payload_length_reg[5]/CLK (SDFFX1)         0.00 #    45.00 r
+  u_zp/latched_payload_length_reg[5]/QN (SDFFX1)          0.40      45.40 f
+  u_zp/latched_payload_length_reg[6]/SI (SDFFX1)          0.15      45.55 f
+  data arrival time                                                 45.55
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_zp/latched_payload_length_reg[6]/CLK (SDFFX1)         0.00      45.01 r
+  library hold time                                      -0.22      44.79
+  data required time                                                44.79
+  --------------------------------------------------------------------------
+  data required time                                                44.79
+  data arrival time                                                -45.55
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.76
+
+
+  Startpoint: u_sm_I/en_w_reg
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_I/shift_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_0
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_I/en_w_reg/CLK (SDFFX1)             0.00 #    45.00 r
+  u_sm_I/en_w_reg/QN (SDFFX1)              0.40      45.40 f
+  u_sm_I/shift_reg_reg[0]/SI (SDFFX1)      0.16      45.56 f
+  data arrival time                                  45.56
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_I/shift_reg_reg[0]/CLK (SDFFX1)     0.00      45.01 r
+  library hold time                       -0.22      44.79
+  data required time                                 44.79
+  -----------------------------------------------------------
+  data required time                                 44.79
+  data arrival time                                 -45.56
+  -----------------------------------------------------------
+  slack (MET)                                         0.77
+
+
+  Startpoint: u_sm_Q/en_w_reg
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_Q/shift_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_1
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_Q/en_w_reg/CLK (SDFFX1)             0.00 #    45.00 r
+  u_sm_Q/en_w_reg/QN (SDFFX1)              0.40      45.40 f
+  u_sm_Q/shift_reg_reg[0]/SI (SDFFX1)      0.17      45.56 f
+  data arrival time                                  45.56
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_Q/shift_reg_reg[0]/CLK (SDFFX1)     0.00      45.01 r
+  library hold time                       -0.22      44.79
+  data required time                                 44.79
+  -----------------------------------------------------------
+  data required time                                 44.79
+  data arrival time                                 -45.56
+  -----------------------------------------------------------
+  slack (MET)                                         0.77
+
+
+  Startpoint: u_mod_top/u_chirp/gap_cnt_reg[0]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_chirp/gap_cnt_reg[1]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  chirp_modulation_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_chirp/gap_cnt_reg[0]/CLK (SDFFX1)           0.00 #    45.00 r
+  u_mod_top/u_chirp/gap_cnt_reg[0]/QN (SDFFX1)            0.40      45.40 f
+  u_mod_top/u_chirp/gap_cnt_reg[1]/SI (SDFFX1)            0.17      45.56 f
+  data arrival time                                                 45.56
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_chirp/gap_cnt_reg[1]/CLK (SDFFX1)           0.00      45.01 r
+  library hold time                                      -0.22      44.79
+  data required time                                                44.79
+  --------------------------------------------------------------------------
+  data required time                                                44.79
+  data arrival time                                                -45.56
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.77
+
+
+  Startpoint: u_sm_I/bit_cnt_reg[1]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_I/data_out_reg[0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_0
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_I/bit_cnt_reg[1]/CLK (SDFFX1)       0.00 #    45.00 r
+  u_sm_I/bit_cnt_reg[1]/QN (SDFFX1)        0.40      45.40 f
+  u_sm_I/data_out_reg[0]/SI (SDFFX1)       0.17      45.57 f
+  data arrival time                                  45.57
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_I/data_out_reg[0]/CLK (SDFFX1)      0.00      45.01 r
+  library hold time                       -0.22      44.79
+  data required time                                 44.79
+  -----------------------------------------------------------
+  data required time                                 44.79
+  data arrival time                                 -45.57
+  -----------------------------------------------------------
+  slack (MET)                                         0.77
+
+
+  Startpoint: u_mod_top/u_chirp/sample_idx_reg[0]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_mod_top/u_chirp/sample_idx_reg[1]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  chirp_modulation_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_mod_top/u_chirp/sample_idx_reg[0]/CLK (SDFFX1)        0.00 #    45.00 r
+  u_mod_top/u_chirp/sample_idx_reg[0]/QN (SDFFX1)         0.40      45.40 f
+  u_mod_top/u_chirp/sample_idx_reg[1]/SI (SDFFX1)         0.17      45.57 f
+  data arrival time                                                 45.57
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_mod_top/u_chirp/sample_idx_reg[1]/CLK (SDFFX1)        0.00      45.01 r
+  library hold time                                      -0.22      44.79
+  data required time                                                44.79
+  --------------------------------------------------------------------------
+  data required time                                                44.79
+  data arrival time                                                -45.57
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.77
+
+
+  Startpoint: u_sm_Q/data_out_reg[2]
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_sm_Q/data_out_reg[3]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  symbol_mapper_test_1
+                     8000                  saed90nm_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  u_sm_Q/data_out_reg[2]/CLK (SDFFX1)      0.00 #    45.00 r
+  u_sm_Q/data_out_reg[2]/QN (SDFFX1)       0.40      45.40 f
+  u_sm_Q/data_out_reg[3]/SI (SDFFX1)       0.17      45.57 f
+  data arrival time                                  45.57
+
+  clock DFT_CLK (rise edge)               45.00      45.00
+  clock network delay (ideal)              0.00      45.00
+  clock uncertainty                        0.01      45.01
+  u_sm_Q/data_out_reg[3]/CLK (SDFFX1)      0.00      45.01 r
+  library hold time                       -0.22      44.79
+  data required time                                 44.79
+  -----------------------------------------------------------
+  data required time                                 44.79
+  data arrival time                                 -45.57
+  -----------------------------------------------------------
+  slack (MET)                                         0.78
+
+
+  Startpoint: u_ctrl_fsm/ready_for_IQ_d_reg
+              (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Endpoint: u_ctrl_fsm/req_cnt_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by DFT_CLK)
+  Path Group: DFT_CLK
+  Path Type: min
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  zigbee_phy_tx      ForQA                 saed90nm_max
+  master_ctrl_fsm_test_1
+                     8000                  saed90nm_max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  u_ctrl_fsm/ready_for_IQ_d_reg/CLK (SDFFSSRX1)           0.00 #    45.00 r
+  u_ctrl_fsm/ready_for_IQ_d_reg/Q (SDFFSSRX1)             0.56      45.56 f
+  u_ctrl_fsm/req_cnt_reg_reg[0]/SI (SDFFX1)               0.04      45.60 f
+  data arrival time                                                 45.60
+
+  clock DFT_CLK (rise edge)                              45.00      45.00
+  clock network delay (ideal)                             0.00      45.00
+  clock uncertainty                                       0.01      45.01
+  u_ctrl_fsm/req_cnt_reg_reg[0]/CLK (SDFFX1)              0.00      45.01 r
+  library hold time                                      -0.20      44.81
+  data required time                                                44.81
+  --------------------------------------------------------------------------
+  data required time                                                44.81
+  data arrival time                                                -45.60
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.78
+
+
+1

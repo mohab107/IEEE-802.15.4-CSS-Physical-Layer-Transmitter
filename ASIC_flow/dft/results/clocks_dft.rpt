@@ -1,0 +1,21 @@
+ 
+****************************************
+Report : clocks
+Design : zigbee_phy_tx
+Version: O-2018.06-SP1
+Date   : Fri Sep 18 09:41:13 2026
+****************************************
+
+Attributes:
+    d - dont_touch_network
+    f - fix_hold
+    p - propagated_clock
+    G - generated_clock
+    g - lib_generated_clock
+
+Clock          Period   Waveform            Attrs     Sources
+--------------------------------------------------------------------------------
+DFT_CLK        100.00   {45 55}                       {scan_clk}
+clk             31.25   {0 15.625}                    {clk}
+--------------------------------------------------------------------------------
+1

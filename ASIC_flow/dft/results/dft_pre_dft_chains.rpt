@@ -1,0 +1,28 @@
+Warning: Design 'zigbee_phy_tx' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+  Information: Using test design rule information from previous dft_drc run.
+  Architecting Scan Chains
+
+****************************************
+Preview_dft report
+For    : 'Insert_dft' command
+Design : zigbee_phy_tx
+Version: O-2018.06-SP1
+Date   : Fri Sep 18 09:40:53 2026
+****************************************
+
+Number of chains: 4
+Scan methodology: full_scan
+Scan style: multiplexed_flip_flop
+Clock domain: no_mix
+
+Chain      Scan Ports (si --> so)        # of Cells   Inst/Chain               Clock (port, time, edge)
+-----      ----------------------        ----------   ----------               ------------------------
+S 1        SI -->  SO                           811   u_ctrl_fsm/current_state_reg[0]
+                            (scan_clk, 45.0, rising) 
+S 2        test_si2 -->  test_so2               811   u_payload_ram/mem_reg[89][2]
+                            (scan_clk, 45.0, rising) 
+S 3        test_si3 -->  test_so3               811   u_sm_ram_I/mem_reg[115][3]
+                            (scan_clk, 45.0, rising) 
+S 4        test_si4 -->  test_so4               811   u_sm_ram_Q/mem_reg[61][2]
+                            (scan_clk, 45.0, rising) 
+1
