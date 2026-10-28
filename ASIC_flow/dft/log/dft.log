@@ -1,0 +1,1402 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version O-2018.06-SP1 for linux64 - Jul 19, 2018 
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+Initializing gui preferences from file  /home/ICer/.synopsys_dv_prefs.tcl
+########################### Define Top Module ############################
+set top_module zigbee_phy_tx
+zigbee_phy_tx
+##################### Define Working Library Directory ######################
+define_design_lib work -path ./work
+1
+################## Design Compiler Library Files #setup ######################
+lappend search_path "../../std_cells"
+. /home/synopsys/syn/O-2018.06-SP1/libraries/syn /home/synopsys/syn/O-2018.06-SP1/minpower/syn /home/synopsys/syn/O-2018.06-SP1/dw/syn_ver /home/synopsys/syn/O-2018.06-SP1/dw/sim_ver ../../std_cells
+lappend search_path "../../rtl"
+. /home/synopsys/syn/O-2018.06-SP1/libraries/syn /home/synopsys/syn/O-2018.06-SP1/minpower/syn /home/synopsys/syn/O-2018.06-SP1/dw/syn_ver /home/synopsys/syn/O-2018.06-SP1/dw/sim_ver ../../std_cells ../../rtl
+set SSLIB "saed90nm_max.db"
+saed90nm_max.db
+## Standard Cell libraries 
+set target_library [list $SSLIB]
+saed90nm_max.db
+## Standard Cell & Hard Macros libraries 
+set link_library [list * $SSLIB]  
+* saed90nm_max.db
+set_svf ${top_module}_dft.svf
+1
+################## Read RTL ######################
+set my_files [list     chirp_modulation.v     demux.v     dqpsk_encoder.v     form_ppdu.v     master_ctrl_fsm.v     mux2x1.v     payload_ram.v     piso.v     preamble_sfd_rom.v     qpsk_dqpsk_chirp_top.v     qpsk_mapper.v     symbol_mapper.v     symbol_mapper_RAM.v     zero_padder.v     zigbee_phy_tx.v ]
+chirp_modulation.v demux.v dqpsk_encoder.v form_ppdu.v master_ctrl_fsm.v mux2x1.v payload_ram.v piso.v preamble_sfd_rom.v qpsk_dqpsk_chirp_top.v qpsk_mapper.v symbol_mapper.v symbol_mapper_RAM.v zero_padder.v zigbee_phy_tx.v
+# 1. Analyze all files
+analyze -format verilog $my_files
+Running PRESTO HDLC
+Compiling source file ../../rtl/chirp_modulation.v
+Compiling source file ../../rtl/demux.v
+Warning:  ../../rtl/chirp_modulation.v:30: The statements in initial blocks are ignored. (VER-281)
+Warning:  ../../rtl/chirp_modulation.v:289: The statements in initial blocks are ignored. (VER-281)
+Compiling source file ../../rtl/dqpsk_encoder.v
+Compiling source file ../../rtl/form_ppdu.v
+Compiling source file ../../rtl/master_ctrl_fsm.v
+Compiling source file ../../rtl/mux2x1.v
+Compiling source file ../../rtl/payload_ram.v
+Compiling source file ../../rtl/piso.v
+Compiling source file ../../rtl/preamble_sfd_rom.v
+Compiling source file ../../rtl/qpsk_dqpsk_chirp_top.v
+Warning:  ../../rtl/preamble_sfd_rom.v:12: The statements in initial blocks are ignored. (VER-281)
+Compiling source file ../../rtl/qpsk_mapper.v
+Compiling source file ../../rtl/symbol_mapper.v
+Compiling source file ../../rtl/symbol_mapper_RAM.v
+Compiling source file ../../rtl/zero_padder.v
+Compiling source file ../../rtl/zigbee_phy_tx.v
+Presto compilation completed successfully.
+Loading db file '/home/ICer/Labs/Zigbee/std_cells/saed90nm_max.db'
+1
+# 2. Elaborate the top module (This resolves all parameters like mux2x1)
+elaborate $top_module
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/gtech.db'
+Loading db file '/home/synopsys/syn/O-2018.06-SP1/libraries/syn/standard.sldb'
+  Loading link library 'saed90nm_max'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'zigbee_phy_tx'.
+Information: Building the design 'mux2x1' instantiated from design 'zigbee_phy_tx' with
+	the parameters "DATA_WIDTH=1". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'master_ctrl_fsm'. (HDL-193)
+Warning:  ../../rtl/master_ctrl_fsm.v:108: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 97 in file
+	'../../rtl/master_ctrl_fsm.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           108            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine master_ctrl_fsm line 63 in file
+		'../../rtl/master_ctrl_fsm.v'.
+============================================================================================
+|          Register Name           |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+============================================================================================
+|        load_delay_reg_reg        | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|        ready_for_IQ_d_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        current_state_reg         | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|      sm_ram_rd_addr_reg_reg      | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+| preample_sfd_rom_rd_addr_reg_reg | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|         req_cnt_reg_reg          | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+============================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'payload_ram'. (HDL-193)
+
+Inferred memory devices in process
+	in routine payload_ram line 39 in file
+		'../../rtl/payload_ram.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       mem_reg       | Flip-flop | 1024  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|  payload_ram/47  |  128   |    8    |      7       |
+======================================================
+Presto compilation completed successfully.
+Information: Building the design 'mux2x1' instantiated from design 'zigbee_phy_tx' with
+	the parameters "DATA_WIDTH=8". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'zero_padder'. (HDL-193)
+Warning:  ../../rtl/zero_padder.v:142: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../../rtl/zero_padder.v:145: signed to unsigned conversion occurs. (VER-318)
+
+Statistics for case statements in always block at line 35 in file
+	'../../rtl/zero_padder.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            46            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 140 in file
+	'../../rtl/zero_padder.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           145            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine zero_padder line 35 in file
+		'../../rtl/zero_padder.v'.
+======================================================================================
+|       Register Name        |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+======================================================================================
+|        counter_reg         | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|  latched_no_of_zeros_reg   | Flip-flop |   3   |  Y  | N  | N  | N  | N  | N  | N  |
+|      byte_holder_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|         state_reg          | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|     o_invalid_bit_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        o_serial_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     o_ram_address_reg      | Flip-flop |   7   |  Y  | N  | N  | N  | N  | N  | N  |
+| latched_payload_length_reg | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+======================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'demux'. (HDL-193)
+
+Inferred memory devices in process
+	in routine demux line 26 in file
+		'../../rtl/demux.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       o_Q_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    o_valid_Q_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       o_I_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    even_bit_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    o_valid_I_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'symbol_mapper'. (HDL-193)
+Warning:  ../../rtl/symbol_mapper.v:23: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 22 in file
+	'../../rtl/symbol_mapper.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            23            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine symbol_mapper line 37 in file
+		'../../rtl/symbol_mapper.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     bit_cnt_reg     | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|      en_w_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|    data_out_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+|    shift_reg_reg    | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|     wr_addr_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'sm_ram'. (HDL-193)
+
+Inferred memory devices in process
+	in routine sm_ram line 18 in file
+		'../../rtl/symbol_mapper_RAM.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       mem_reg       | Flip-flop | 1024  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine sm_ram line 25 in file
+		'../../rtl/symbol_mapper_RAM.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    data_out_reg     | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|    sm_ram/26     |  256   |    4    |      8       |
+======================================================
+Presto compilation completed successfully.
+Information: Building the design 'form_ppdu' instantiated from design 'zigbee_phy_tx' with
+	the parameters "DATA_WIDTH=4,ADDR_WIDTH=4". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'qpsk_dqpsk_chirp_top'. (HDL-193)
+
+Inferred memory devices in process
+	in routine qpsk_dqpsk_chirp_top line 44 in file
+		'../../rtl/qpsk_dqpsk_chirp_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   sn_valid_d_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'mux2x1' instantiated from design 'form_ppdu_DATA_WIDTH4_ADDR_WIDTH4' with
+	the parameters "DATA_WIDTH=4". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'preamble_sfd_rom' instantiated from design 'form_ppdu_DATA_WIDTH4_ADDR_WIDTH4' with
+	the parameters "DATA_WIDTH=4,ADDR_WIDTH=4". (HDL-193)
+
+Inferred memory devices in process
+	in routine preamble_sfd_rom_ADDR_WIDTH4_DATA_WIDTH4 line 30 in file
+		'../../rtl/preamble_sfd_rom.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      data_reg       | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+=================================================================================
+|              block name/line                | Inputs | Outputs | # sel inputs |
+=================================================================================
+| preamble_sfd_rom_ADDR_WIDTH4_DATA_WIDTH4/31 |   16   |    1    |      4       |
+=================================================================================
+Presto compilation completed successfully.
+Information: Building the design 'piso' instantiated from design 'form_ppdu_DATA_WIDTH4_ADDR_WIDTH4' with
+	the parameters "DATA_WIDTH=4". (HDL-193)
+
+Inferred memory devices in process
+	in routine piso_DATA_WIDTH4 line 13 in file
+		'../../rtl/piso.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      valid_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       out_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|        q_reg        | Flip-flop |   4   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'qpsk_mapper'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'dqpsk_encoder'. (HDL-193)
+
+Inferred memory devices in process
+	in routine dqpsk_encoder line 54 in file
+		'../../rtl/dqpsk_encoder.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    real_out_reg     | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|       ptr_reg       | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|    imag_out_reg     | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_imag_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|    buf_real_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+| dqpsk_encoder/23 |   4    |    4    |      2       |
+======================================================
+Presto compilation completed successfully.
+Information: Building the design 'chirp_modulation'. (HDL-193)
+Warning:  ../../rtl/chirp_modulation.v:608: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../../rtl/chirp_modulation.v:606: signed to unsigned conversion occurs. (VER-318)
+
+Statistics for case statements in always block at line 572 in file
+	'../../rtl/chirp_modulation.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           582            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine chirp_modulation line 572 in file
+		'../../rtl/chirp_modulation.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    done_mod_reg     | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       si_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|     Tx_real_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|  group_parity_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       sr_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   sample_idx_reg    | Flip-flop |   6   |  Y  | N  | N  | N  | N  | N  | N  |
+|     gap_cnt_reg     | Flip-flop |   7   |  Y  | N  | N  | N  | N  | N  | N  |
+|  subchirp_idx_reg   | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|     Tx_imag_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+| last_group_lat_reg  | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   2   |  Y  | N  | N  | N  | N  | N  | N  |
+|     sn_req_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|  sample_valid_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+==========================================================
+|   block name/line    | Inputs | Outputs | # sel inputs |
+==========================================================
+| chirp_modulation/559 |  256   |    1    |      8       |
+==========================================================
+Presto compilation completed successfully.
+1
+###################### Defining toplevel ###################################
+current_design $top_module
+Current design is 'zigbee_phy_tx'.
+{zigbee_phy_tx}
+#################### Liniking All The Design Parts #########################
+puts "###############################################"
+###############################################
+puts "######## Liniking All The Design Parts ########"
+######## Liniking All The Design Parts ########
+puts "###############################################"
+###############################################
+link 
+
+  Linking design 'zigbee_phy_tx'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (17 designs)              /home/ICer/Labs/Zigbee/dft/run/zigbee_phy_tx.db, etc
+  saed90nm_max (library)      /home/ICer/Labs/Zigbee/std_cells/saed90nm_max.db
+
+1
+#################### Liniking All The Design Parts #########################
+puts "###############################################"
+###############################################
+puts "######## checking design consistency ##########"
+######## checking design consistency ##########
+puts "###############################################"
+###############################################
+check_design
+ 
+****************************************
+check_design summary:
+Version:     O-2018.06-SP1
+Date:        Fri Sep 18 09:39:08 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      6
+    Unconnected ports (LINT-28)                                     6
+
+Cells                                                              22
+    Cells do not drive (LINT-1)                                    21
+    Connected to power or ground (LINT-32)                          1
+--------------------------------------------------------------------------------
+
+Warning: In design 'master_ctrl_fsm', cell 'C390' does not drive any nets. (LINT-1)
+Warning: In design 'master_ctrl_fsm', cell 'C402' does not drive any nets. (LINT-1)
+Warning: In design 'zero_padder', cell 'C530' does not drive any nets. (LINT-1)
+Warning: In design 'zero_padder', cell 'C540' does not drive any nets. (LINT-1)
+Warning: In design 'zero_padder', cell 'C544' does not drive any nets. (LINT-1)
+Warning: In design 'zero_padder', cell 'C547' does not drive any nets. (LINT-1)
+Warning: In design 'zero_padder', cell 'C553' does not drive any nets. (LINT-1)
+Warning: In design 'symbol_mapper', cell 'C208' does not drive any nets. (LINT-1)
+Warning: In design 'symbol_mapper', cell 'C210' does not drive any nets. (LINT-1)
+Warning: In design 'dqpsk_encoder', cell 'B_6' does not drive any nets. (LINT-1)
+Warning: In design 'dqpsk_encoder', cell 'C150' does not drive any nets. (LINT-1)
+Warning: In design 'dqpsk_encoder', cell 'C154' does not drive any nets. (LINT-1)
+Warning: In design 'dqpsk_encoder', cell 'C163' does not drive any nets. (LINT-1)
+Warning: In design 'chirp_modulation', cell 'B_22' does not drive any nets. (LINT-1)
+Warning: In design 'chirp_modulation', cell 'B_23' does not drive any nets. (LINT-1)
+Warning: In design 'chirp_modulation', cell 'B_24' does not drive any nets. (LINT-1)
+Warning: In design 'chirp_modulation', cell 'B_25' does not drive any nets. (LINT-1)
+Warning: In design 'chirp_modulation', cell 'C527' does not drive any nets. (LINT-1)
+Warning: In design 'chirp_modulation', cell 'C531' does not drive any nets. (LINT-1)
+Warning: In design 'chirp_modulation', cell 'C532' does not drive any nets. (LINT-1)
+Warning: In design 'chirp_modulation', cell 'C540' does not drive any nets. (LINT-1)
+Warning: In design 'zigbee_phy_tx', port 'SI' is not connected to any nets. (LINT-28)
+Warning: In design 'zigbee_phy_tx', port 'SE' is not connected to any nets. (LINT-28)
+Warning: In design 'zigbee_phy_tx', port 'SO' is not connected to any nets. (LINT-28)
+Warning: In design 'payload_ram', port 'rd_addr[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'chirp_modulation', port 'sn_real[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'chirp_modulation', port 'sn_imag[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'zigbee_phy_tx', a pin on submodule 'u_payload_ram' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'rd_addr[7]' is connected to logic 0. 
+1
+#################### Define Design Constraints #########################
+puts "###############################################"
+###############################################
+puts "############ Design Constraints #### ##########"
+############ Design Constraints #### ##########
+puts "###############################################"
+###############################################
+source -echo -verbose ../cons/synthesis_cons.tcl
+create_clock -name clk -period 31.25 -waveform {0 15.625} [get_ports clk]
+1
+set_clock_uncertainty -setup 1.25 [get_clocks clk]
+1
+set_clock_uncertainty -hold 0.7 [get_clocks clk]
+1
+############################ 4% clock uncertainty##################################
+set_ideal_network [get_ports clk]
+1
+set_ideal_network [get_ports reset]
+1
+#set_dont_touch_network [get_clocks clk]
+####################################################################################
+set_input_delay -clock clk -max 2.00 [remove_from_collection [all_inputs] [get_ports {clk scan_clk}]]
+1
+set_output_delay -clock clk -max 2.00 [all_outputs]
+1
+#################################################################################
+set_max_fanout 3 [current_design]
+Current design is 'zigbee_phy_tx'.
+1
+##################################################################################
+set_max_capacitance 50 [current_design]
+Current design is 'zigbee_phy_tx'.
+1
+##################################################################################
+set_max_transition 1.00 [current_design]
+Current design is 'zigbee_phy_tx'.
+1
+#################################################################################
+set_driving_cell -lib_cell IBUFFX2 [remove_from_collection [all_inputs] [get_ports {clk scan_clk}]]
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+1
+set_load 5 [all_outputs]
+1
+####################################################################################
+set_dont_use [get_lib_cells */*AND3*]
+1
+set_wire_load_model -name ForQA -library saed90nm_max [current_design]
+Current design is 'zigbee_phy_tx'.
+1
+1
+source -echo -verbose ../cons/dft_cons.tcl
+# Constraints
+# ----------------------------------------------------------------------------
+# 0. Ideal Network
+#
+# 1. Clock Definitions
+#
+# 2. set input/output delay on ports
+#
+# 3. Driving cells
+#
+# 4. Output load
+#
+# 5. Scan Config
+#
+# 6. Port Config
+#
+####################################################################################
+#########################################################
+#### Section 0 : Ideal Network and DC Variables ####
+#########################################################
+#################################################################################### 
+set_case_analysis 1 [get_ports test_mode]
+1
+set_ideal_network {clk reset scan_clk scan_rst test_mode SE}
+1
+set_fix_multiple_port_nets -all -buffer_constants -feedthroughs
+1
+set test_default_period 100
+100
+set test_default_delay 0
+0
+set test_default_bidir_delay 0
+0
+set test_default_strobe 40
+40
+set test_default_strobe_width 0
+0
+####################################################################################
+#########################################################
+#### Section 1 : Clock Definition ####
+#########################################################
+#################################################################################### 
+# 1. Master Clock Definitions 
+# 2. Generated Clock Definitions
+# 3. Clock Latencies
+# 4. Clock Uncertainties
+# 4. Clock Transitions
+####################################################################################
+set DFT_CLK_NAME DFT_CLK
+DFT_CLK
+set DFT_CLK_PER 100
+100
+set DFT_CLK_SETUP_SKEW 0.025
+0.025
+set DFT_CLK_HOLD_SKEW 0.01
+0.01
+set CLK_LAT 0
+0
+create_clock -name $DFT_CLK_NAME -period $DFT_CLK_PER -waveform {45 55} [get_ports scan_clk]
+1
+set_clock_groups -logically_exclusive -group clk -group $DFT_CLK_NAME
+1
+set_clock_uncertainty -setup $DFT_CLK_SETUP_SKEW [get_clocks $DFT_CLK_NAME]
+1
+set_clock_uncertainty -hold  $DFT_CLK_HOLD_SKEW  [get_clocks $DFT_CLK_NAME]
+1
+####################################################################################
+#########################################################
+#### Section 2 : set input/output delay on ports ####
+#########################################################
+####################################################################################
+set dft_in_delay  [expr 0.3*$DFT_CLK_PER]
+30.0
+set dft_out_delay [expr 0.3*$DFT_CLK_PER]
+30.0
+set dft_in_ports "SI SE test_mode"
+SI SE test_mode
+set dft_out_ports "SO"
+SO
+#Constrain Input Paths
+set_input_delay $dft_in_delay -clock $DFT_CLK_NAME [get_ports "$dft_in_ports"]
+1
+#Constrain Output Paths
+set_output_delay $dft_out_delay -clock $DFT_CLK_NAME [get_ports "$dft_out_ports"]
+1
+####################################################################################
+#########################################################
+#### Section 3 : Driving cells ####
+#########################################################
+####################################################################################
+set_driving_cell -library "saed90nm_max" -lib_cell IBUFFX2 [get_ports "$dft_in_ports"]
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+1
+####################################################################################
+#########################################################
+#### Section 4 : Output load ####
+#########################################################
+####################################################################################
+set_load 0.1 [get_ports "$dft_out_ports"]
+1
+####################################################################################
+#########################################################
+#### Section 5 : Scan Config ####
+#########################################################
+####################################################################################
+set_scan_configuration -style multiplexed_flip_flop -replace true -clock_mixing no_mix -max_length 1000
+Accepted scan configuration for modes: all_dft
+1
+####################################################################################
+#########################################################
+#### Section 6 : Port Config ####
+#########################################################
+####################################################################################
+set_dft_signal -view existing_dft -type ScanClock   -port [get_ports scan_clk] -timing {45 55}
+Accepted dft signal specification for modes: all_dft
+1
+#set_dft_signal -view existing_dft -type Reset      -port [get_ports scan_rst]  -active_state 0
+set_dft_signal -view existing_dft -type Constant    -port [get_ports test_mode] -active_state 1
+Accepted dft signal specification for modes: all_dft
+1
+set_dft_signal -view spec         -type TestMode    -port [get_ports test_mode] -active_state 1
+Accepted dft signal specification for modes: all_dft
+1
+set_dft_signal -view spec         -type ScanEnable  -port [get_ports SE]        -active_state 1  -usage scan
+Accepted dft signal specification for modes: all_dft
+1
+set_dft_signal -view spec         -type ScanDataIn  -port [get_ports SI] 
+Accepted dft signal specification for modes: all_dft
+1
+set_dft_signal -view spec         -type ScanDataOut -port [get_ports SO] 
+Accepted dft signal specification for modes: all_dft
+1
+1
+#################### Replace DFF with SFF #########################
+compile -scan -map_effort high
+Information: Choosing a test methodology will restrict the optimization of sequential cells. (UIO-12)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.1 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 28 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Warning: The nextstate or clock_on object of the test_cell definition of the library cell 'SDFFSSRX2' has scan pins. (OPT-1209)
+Warning: The nextstate or clock_on object of the test_cell definition of the library cell 'SDFFSSRX1' has scan pins. (OPT-1209)
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'chirp_modulation'
+  Processing 'dqpsk_encoder'
+  Processing 'qpsk_mapper'
+  Processing 'qpsk_dqpsk_chirp_top'
+  Processing 'piso_DATA_WIDTH4_0'
+  Processing 'preamble_sfd_rom_ADDR_WIDTH4_DATA_WIDTH4'
+Information: The register 'data_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'data_reg[2]' is a constant and will be removed. (OPT-1206)
+Information: The register 'data_reg[1]' is a constant and will be removed. (OPT-1206)
+Information: The register 'data_reg[0]' is a constant and will be removed. (OPT-1206)
+  Processing 'mux2x1_DATA_WIDTH4_0'
+  Processing 'form_ppdu_DATA_WIDTH4_ADDR_WIDTH4'
+  Processing 'sm_ram_0'
+  Processing 'symbol_mapper_0'
+  Processing 'demux'
+  Processing 'zero_padder'
+Information: The register 'latched_no_of_zeros_reg[0]' is a constant and will be removed. (OPT-1206)
+  Processing 'mux2x1_DATA_WIDTH8'
+  Processing 'payload_ram'
+  Processing 'master_ctrl_fsm'
+  Processing 'mux2x1_DATA_WIDTH1_0'
+  Processing 'zigbee_phy_tx'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'chirp_modulation_DW01_dec_0'
+  Processing 'chirp_modulation_DW01_inc_0'
+  Processing 'chirp_modulation_DW01_dec_1'
+  Processing 'chirp_modulation_DW01_add_0'
+  Processing 'chirp_modulation_DW01_sub_0'
+  Processing 'chirp_modulation_DW01_sub_1'
+  Processing 'chirp_modulation_DW01_sub_2'
+  Processing 'symbol_mapper_1_DW01_inc_0'
+  Processing 'symbol_mapper_0_DW01_inc_0'
+  Processing 'zero_padder_DW01_inc_0'
+  Processing 'zero_padder_DW01_cmp2_0'
+  Processing 'zero_padder_DW01_cmp2_1'
+  Processing 'master_ctrl_fsm_DW01_inc_0'
+  Processing 'master_ctrl_fsm_DW01_cmp6_0'
+  Processing 'master_ctrl_fsm_DW01_dec_0'
+  Processing 'chirp_modulation_DW02_mult_0'
+  Processing 'chirp_modulation_DW01_add_2'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_add_width4'
+  Processing 'DW01_sub_width4'
+  Processing 'DW01_sub_width4'
+Information: The register 'u_mod_top/u_chirp/sr_reg[1]' will be removed. (OPT-1207)
+Information: The register 'u_mod_top/u_chirp/si_reg[1]' will be removed. (OPT-1207)
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:16  190958.3     78.14    1869.2       0.1                          
+    0:00:17  190958.3     78.14    1869.2       0.1                          
+    0:00:17  190958.3     78.14    1869.2       0.1                          
+    0:00:17  190963.8     77.87    1864.1       0.1                          
+    0:00:17  190963.8     77.87    1864.8       0.1                          
+    0:00:18  181278.7     76.93    2482.7       0.0                          
+    0:00:18  181550.6     75.18    1863.0       0.0                          
+    0:00:19  181343.2     73.24    2474.4       0.0                          
+    0:00:19  181343.2     73.24    2474.4       0.0                          
+    0:00:19  181343.2     73.24    2474.4       0.0                          
+    0:00:20  181343.2     73.24    2474.4       0.0                          
+    0:00:20  181343.2     73.24    2474.4       0.0                          
+    0:00:20  181343.2     73.24    2474.4       0.0                          
+    0:00:20  181343.2     73.24    2474.4       0.0                          
+    0:00:20  181343.2     73.24    2474.4       0.0                          
+    0:00:20  181452.9     71.89    2444.2       0.0                          
+    0:00:20  181558.9     71.09    2435.1       0.0                          
+    0:00:20  181663.9     70.26    2419.8       0.0                          
+    0:00:20  181819.7     69.21    2382.0       0.0                          
+    0:00:20  181903.6     68.55    2363.0       0.0                          
+    0:00:20  181957.0     67.49    2345.0       0.0                          
+    0:00:20  182129.4     65.97    2306.5       0.0                          
+    0:00:20  182474.0     62.99    2222.7       0.0                          
+    0:00:20  182620.6     61.07    2184.2       0.0                          
+    0:00:21  182817.8     60.24    2162.0       0.0                          
+    0:00:21  182852.8     59.38    2144.4       0.0                          
+    0:00:21  182935.8     58.79    2120.9       0.0                          
+    0:00:21  183044.5     58.25    2108.7       0.0                          
+    0:00:21  183098.0     58.01    2096.0       0.0                          
+    0:00:21  183206.7     58.01    2082.5       0.0                          
+    0:00:21  183211.3     58.01    2077.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:21  183211.3     58.01    2077.0       0.0                          
+    0:00:21  183176.3     55.86    2036.6       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:22  183374.4     54.79    2013.9       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:22  183390.1     54.46    2004.5       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:22  183503.5     54.01    1991.0       0.0 u_sm_ram_Q/data_out_reg[0]/D
+    0:00:22  183599.3     53.49    1974.6       0.0 u_sm_ram_Q/data_out_reg[3]/D
+    0:00:22  183678.6     52.19    1946.0       0.0 u_sm_ram_Q/data_out_reg[3]/D
+    0:00:23  183690.5     51.91    1938.1       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:23  183730.2     50.99    1909.7       0.0 u_sm_ram_I/data_out_reg[0]/D
+    0:00:23  183724.6     50.40    1896.3       0.0 u_sm_ram_Q/data_out_reg[0]/D
+    0:00:23  183716.4     50.08    1872.5       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:24  183739.4     49.56    1816.3       0.0 u_sm_ram_Q/data_out_reg[3]/D
+    0:00:24  183759.7     48.97    1773.0       0.0 u_sm_ram_I/data_out_reg[3]/D
+    0:00:24  183841.7     46.76    1756.0       0.0 u_sm_ram_Q/data_out_reg[3]/D
+    0:00:24  183907.1     45.89    1751.9       0.0 u_sm_ram_I/data_out_reg[3]/D
+    0:00:24  183916.3     44.82    1716.7       0.0 u_sm_ram_I/data_out_reg[3]/D
+    0:00:24  183906.2     44.20    1696.7       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:24  183887.8     42.67    1658.4       0.0 u_sm_ram_Q/data_out_reg[0]/D
+    0:00:25  183921.9     41.81    1638.5       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:25  183968.9     40.32    1603.6       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:25  184040.8     37.69    1549.9       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:25  184102.5     36.58    1526.4       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:25  184102.5     36.18    1507.3       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:25  184118.2     35.75    1501.9       0.0 u_sm_ram_I/data_out_reg[3]/D
+    0:00:25  184130.1     35.14    1412.5       0.0 u_sm_ram_Q/data_out_reg[0]/D
+    0:00:25  184155.0     34.56    1408.3       0.0 u_sm_ram_I/data_out_reg[3]/D
+    0:00:26  184201.1     31.41    1383.9       0.0 u_sm_ram_Q/data_out_reg[0]/D
+    0:00:26  184253.6     31.14    1382.7       0.0 u_sm_ram_Q/data_out_reg[0]/D
+    0:00:26  184302.5     30.15    1333.2       0.0 u_sm_ram_I/data_out_reg[3]/D
+    0:00:26  184323.7     29.55    1320.9       0.0 u_sm_ram_I/data_out_reg[2]/D
+    0:00:26  184364.2     28.21    1286.8       0.0 u_sm_ram_I/data_out_reg[2]/D
+    0:00:26  184477.6     27.26    1269.6       0.0 u_sm_ram_I/data_out_reg[0]/D
+    0:00:27  184532.0     26.00    1242.6       0.0 u_sm_ram_Q/data_out_reg[2]/D
+    0:00:27  184448.1     25.26    1220.2       0.0 u_sm_ram_Q/data_out_reg[2]/D
+    0:00:27  184472.1     24.45    1202.7       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:27  184461.0     24.09    1187.4       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:27  184487.7     23.96    1183.1       0.0 u_sm_ram_I/data_out_reg[1]/D
+    0:00:27  184532.0     22.95    1140.0       0.0 u_sm_ram_Q/data_out_reg[1]/D
+    0:00:27  184559.6     22.07    1135.9       0.0 u_sm_ram_Q/data_out_reg[3]/D
+    0:00:27  184550.4     21.47    1117.4       0.0 u_sm_ram_I/data_out_reg[3]/D
+    0:00:27  184556.8     20.10    1088.6       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:28  184551.3     19.40    1064.6       0.0 u_sm_ram_Q/data_out_reg[0]/D
+    0:00:28  184524.6     18.42    1030.1       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:28  184492.3     15.59     955.2       0.0 u_sm_ram_I/data_out_reg[3]/D
+    0:00:28  184397.4     14.51     932.4       0.0 u_sm_ram_I/data_out_reg[3]/D
+    0:00:28  184402.9     13.58     903.6       0.0 u_sm_ram_I/data_out_reg[2]/D
+    0:00:28  184451.8     11.44     841.5       0.0 u_sm_ram_I/data_out_reg[1]/D
+    0:00:28  184361.5     10.35     816.9       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:28  184426.9      9.58     803.4       0.0 u_sm_ram_Q/data_out_reg[0]/D
+    0:00:29  184485.9      8.81     781.0       0.0 u_sm_ram_Q/data_out_reg[0]/D
+    0:00:29  184526.4      8.23     757.4       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:29  184514.5      7.39     738.2       0.0 u_sm_ram_Q/data_out_reg[2]/D
+    0:00:29  184460.1      6.53     718.1       0.0 u_sm_ram_I/data_out_reg[2]/D
+    0:00:29  184478.5      6.02     707.5       0.0 u_sm_ram_I/data_out_reg[2]/D
+    0:00:29  184512.6      5.55     696.6       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:29  184539.3      5.44     697.0       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:29  184522.8      4.92     686.6       0.0 u_sm_ram_I/data_out_reg[3]/D
+    0:00:29  184507.1      4.51     674.6       0.0 u_sm_ram_Q/data_out_reg[0]/D
+    0:00:30  184486.8      3.78     667.9       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:30  184470.2      3.64     662.8       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:30  184470.2      3.22     661.2       0.0 u_sm_ram_I/data_out_reg[3]/D
+    0:00:30  184459.2      3.09     659.0       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:30  184486.8      2.84     658.1       0.0 u_sm_ram_I/data_out_reg[0]/D
+    0:00:30  184461.0      2.78     656.6       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:30  184392.8      2.58     655.0       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:30  184388.2      2.33     653.1       0.0 u_sm_ram_I/data_out_reg[2]/D
+    0:00:30  184384.5      2.32     652.6       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:31  184575.3      2.24     652.1       0.0                          
+    0:00:31  184565.1      2.20     651.9       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:31  184596.5      2.16     573.3       0.0 u_sm_ram_Q/mem_reg[71][2]/D
+    0:00:31  184596.5      2.15     443.3       0.0 u_sm_ram_I/mem_reg[34][3]/D
+    0:00:31  184632.4      2.02     441.6       0.0 u_sm_ram_I/data_out_reg[1]/D
+    0:00:31  184646.2      1.98     441.5       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:32  184671.1      1.94     441.0       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:32  184673.0      1.93     440.9       0.0 u_sm_ram_I/data_out_reg[1]/D
+    0:00:32  184690.5      1.88     440.1       0.0 u_sm_ram_I/data_out_reg[3]/D
+    0:00:32  184702.5      1.79     439.2       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:32  184705.2      1.76     439.2       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:32  184716.3      1.76     439.2       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:32  184733.8      1.68     438.4       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:32  184717.2      1.67     438.3       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:32  184737.5      1.57     438.1       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:33  184744.9      1.55     437.8       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:33  184776.2      1.52     437.9       0.0 u_sm_ram_I/data_out_reg[2]/D
+    0:00:33  184778.0      1.52     437.8       0.0 u_sm_ram_I/data_out_reg[3]/D
+    0:00:33  184778.0      1.52     437.7       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:33  184747.6      1.50     437.2       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:33  184750.4      1.44     436.4       0.0                          
+    0:00:34  184780.8      1.43     435.6       0.0 u_sm_ram_Q/data_out_reg[0]/D
+    0:00:34  184782.6      1.42     427.7       0.0 u_sm_ram_Q/mem_reg[71][0]/D
+    0:00:34  184783.6      1.42     420.0       0.0 u_sm_ram_Q/mem_reg[71][1]/D
+    0:00:34  184784.5      1.42     412.2       0.0 u_sm_ram_Q/mem_reg[71][2]/D
+    0:00:34  184785.4      1.42     404.5       0.0 u_sm_ram_Q/mem_reg[71][3]/D
+    0:00:34  184786.3      1.42     396.8       0.0 u_sm_ram_I/mem_reg[34][0]/D
+    0:00:34  184787.2      1.42     389.0       0.0 u_sm_ram_I/mem_reg[34][1]/D
+    0:00:34  184788.2      1.42     381.3       0.0 u_sm_ram_I/mem_reg[34][2]/D
+    0:00:34  184789.1      1.42     373.6       0.0 u_sm_ram_I/mem_reg[34][3]/D
+    0:00:36  184909.8      1.33     306.0       0.0                          
+    0:00:37  184910.7      1.33     305.9       0.0 u_sm_ram_I/mem_reg[34][3]/D
+    0:00:38  185047.1      1.29     238.8       0.0                          
+    0:00:38  185063.7      1.16     237.6       0.0 u_sm_ram_I/data_out_reg[3]/D
+    0:00:38  185069.3      1.01     236.2       0.0 u_sm_ram_I/data_out_reg[2]/D
+    0:00:38  185069.3      0.97     234.9       0.0 u_sm_ram_Q/data_out_reg[3]/D
+    0:00:38  185069.3      0.74     233.3       0.0 u_sm_ram_I/data_out_reg[1]/D
+    0:00:38  185076.6      0.67     231.5       0.0 u_sm_ram_I/data_out_reg[1]/D
+    0:00:39  185114.4      0.67     148.7       0.0                          
+    0:00:40  185171.6      0.67      65.1       0.0                          
+    0:00:40  185171.6      0.67      65.0       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:41  185172.5      0.66      64.9       0.0 u_sm_ram_Q/data_out_reg[3]/D
+    0:00:41  185178.0      0.59      64.4       0.0 u_sm_ram_Q/data_out_reg[3]/D
+    0:00:41  185148.5      0.59      45.7       0.0 u_sm_ram_Q/mem_reg[63][3]/D
+    0:00:41  185119.0      0.56      26.9       0.0 u_sm_ram_I/mem_reg[27][3]/D
+    0:00:41  185116.3      0.46      11.0       0.2                          
+    0:00:42  185140.2      0.29      10.6       0.2 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:42  185057.3      0.24      10.1       0.2 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:42  185054.5      0.20      10.1       0.2 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:42  185042.5      0.15       9.6       0.2 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:42  185049.0      0.15       9.5       0.2 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:42  185021.3      0.11       4.2       0.2 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:42  184998.3      0.08       3.8       0.2 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:43  184976.2      0.07       3.8       0.2 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:43  184975.3      0.06       3.8       0.2 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:43  184973.4      0.06       3.8       0.2 u_zp/latched_no_of_zeros_reg[2]/D
+    0:00:43  185007.5      0.04       3.8       0.2                          
+    0:00:43  185005.7      0.03       3.7       0.2 u_zp/latched_no_of_zeros_reg[2]/D
+    0:00:44  185066.5      0.03       3.7       0.2                          
+    0:00:45  185123.6      0.03       1.9       1.5                          
+    0:00:45  185188.1      0.01       0.0       3.0                          
+    0:00:45  185184.5      0.00       0.0       3.0                          
+    0:00:46  185162.3      0.00       0.0       3.0                          
+
+
+  Beginning Design Rule Fixing  (max_fanout)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:46  185162.3      0.00       0.0       3.0                          
+    0:00:46  185214.0      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:46  185214.0      0.00       0.0       0.0                          
+    0:00:46  185214.0      0.00       0.0       0.0                          
+    0:00:46  184614.9      0.58       2.3       0.0                          
+    0:00:47  184388.2      0.44      22.5       0.0                          
+    0:00:47  184323.7      0.44      22.6       0.0                          
+    0:00:47  184263.8      4.31      30.9       0.0                          
+    0:00:47  184211.2      4.31      33.3       0.0                          
+    0:00:47  184211.2      4.31      33.3       0.0                          
+    0:00:48  184195.6      0.72      30.0       0.0 u_sm_ram_I/data_out_reg[0]/D
+    0:00:49  184237.1      0.38       4.7       0.0                          
+    0:00:50  184226.9      0.29       3.5       0.0                          
+    0:00:50  183286.9      3.11      24.6       0.0                          
+    0:00:50  183132.1      3.11      28.9       0.0                          
+    0:00:50  183110.9      3.05      28.8       0.0                          
+    0:00:50  183110.9      3.05      28.8       0.0                          
+    0:00:50  183110.9      3.05      28.8       0.0                          
+    0:00:50  183110.9      3.05      28.8       0.0                          
+    0:00:50  183110.9      3.05      28.8       0.0                          
+    0:00:50  183110.9      3.05      28.8       0.0                          
+    0:00:50  183126.5      1.48      24.4       0.0 u_sm_ram_I/data_out_reg[3]/D
+    0:00:51  183132.1      1.47      24.3       0.0 u_zp/latched_no_of_zeros_reg[2]/D
+    0:00:51  183154.2      1.41      23.6       0.0 u_zp/latched_no_of_zeros_reg[2]/D
+    0:00:51  183151.4      1.38      23.6       0.0 u_zp/latched_no_of_zeros_reg[2]/D
+    0:00:51  183156.9      1.34      23.2       0.0 u_zp/latched_no_of_zeros_reg[2]/D
+    0:00:51  183179.1      1.19      22.1       0.0 u_sm_ram_I/data_out_reg[2]/D
+    0:00:51  183192.9      1.08      21.0       0.0 u_zp/latched_no_of_zeros_reg[2]/D
+    0:00:51  183193.8      1.07      20.0       0.0 u_sm_ram_Q/mem_reg[186][0]/D
+    0:00:52  183242.6      0.97      18.5       0.0                          
+    0:00:53  183258.3      0.97      18.1       0.0                          
+Loading db file '/home/ICer/Labs/Zigbee/std_cells/saed90nm_max.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'zigbee_phy_tx' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'u_form_ppdu/Q_piso/clk': 3244 load(s), 1 driver(s)
+1
+###################### Mapping and optimization ########################
+puts "###############################################"
+###############################################
+puts "########## Mapping & Optimization #############"
+########## Mapping & Optimization #############
+puts "###############################################"
+###############################################
+compile -scan -map_effort high
+Information: Choosing a test methodology will restrict the optimization of sequential cells. (UIO-12)
+
+Information: There are 24 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'chirp_modulation'
+  Processing 'dqpsk_encoder'
+  Processing 'qpsk_mapper'
+  Processing 'qpsk_dqpsk_chirp_top'
+  Processing 'piso_DATA_WIDTH4_1'
+  Processing 'piso_DATA_WIDTH4_0'
+  Processing 'preamble_sfd_rom_ADDR_WIDTH4_DATA_WIDTH4'
+  Processing 'mux2x1_DATA_WIDTH4_1'
+  Processing 'form_ppdu_DATA_WIDTH4_ADDR_WIDTH4'
+  Processing 'sm_ram_1'
+  Processing 'sm_ram_0'
+  Processing 'symbol_mapper_1_DW01_inc_0'
+  Processing 'symbol_mapper_1'
+  Processing 'symbol_mapper_0_DW01_inc_0'
+  Processing 'symbol_mapper_0'
+  Processing 'demux'
+  Processing 'zero_padder_DW01_inc_0'
+  Processing 'zero_padder'
+  Processing 'mux2x1_DATA_WIDTH8'
+  Processing 'payload_ram'
+  Processing 'master_ctrl_fsm_DW01_inc_0'
+  Processing 'master_ctrl_fsm'
+  Processing 'mux2x1_DATA_WIDTH1_1'
+  Processing 'mux2x1_DATA_WIDTH1_0'
+  Processing 'zigbee_phy_tx'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+Warning: The nextstate or clock_on object of the test_cell definition of the library cell 'SDFFSSRX2' has scan pins. (OPT-1209)
+Warning: The nextstate or clock_on object of the test_cell definition of the library cell 'SDFFSSRX1' has scan pins. (OPT-1209)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:13  220117.7     44.34   84090.5    1659.3                          
+    0:00:13  210785.6     44.34   84000.7    1659.3                          
+    0:00:13  210785.6     44.34   84000.7    1659.3                          
+    0:00:14  210781.0     44.34   84000.7    1659.3                          
+    0:00:14  210781.0     44.34   84000.7    1659.3                          
+    0:00:14  210781.0     44.34   84000.6    1659.3                          
+    0:00:17  191785.0     54.83   84967.6       0.0                          
+    0:00:17  191858.7     44.08   83534.9       0.0                          
+    0:00:18  191706.6     45.91   83771.4       0.0                          
+    0:00:18  191724.1     43.34   83718.3       0.0                          
+    0:00:18  191757.3     43.25   83750.1       0.0                          
+    0:00:19  191776.7     43.25   82161.4       0.0                          
+    0:00:19  191801.5     44.16   81674.4       0.0                          
+    0:00:19  191831.0     44.53   81369.5       0.0                          
+    0:00:19  191874.4     43.25   81127.3       0.0                          
+    0:00:20  191857.8     43.25   80578.3       0.0                          
+    0:00:20  191887.3     43.25   80446.5       0.0                          
+    0:00:20  191926.9     43.25   79691.4       0.0                          
+    0:00:20  191947.2     43.25   79576.3       0.0                          
+    0:00:20  191996.9     43.25   78763.7       0.0                          
+    0:00:20  192026.4     43.25   78049.5       0.0                          
+    0:00:21  192036.6     43.25   77992.0       0.0                          
+    0:00:21  192085.4     43.25   76654.2       0.0                          
+    0:00:21  192114.9     43.25   75956.5       0.0                          
+    0:00:21  192125.0     43.25   75899.0       0.0                          
+    0:00:21  192125.0     43.25   75899.0       0.0                          
+    0:00:21  192125.0     43.25   75899.0       0.0                          
+    0:00:21  192125.0     43.25   75899.0       0.0                          
+    0:00:21  192125.0     43.25   75899.0       0.0                          
+    0:00:21  192125.0     43.25   75899.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:21  192125.0     43.25   75899.0       0.0                          
+    0:00:21  192267.0     40.42   74457.5       0.0 u_zp/latched_no_of_zeros_reg[2]/D
+    0:00:21  192320.4     38.64   73472.7       0.2 u_sm_ram_I/mem_reg[126][1]/D
+    0:00:22  192793.2     38.24   69637.5       0.2 u_sm_ram_I/mem_reg[126][3]/D
+    0:00:22  192818.1     37.77   69193.2       0.2 u_sm_ram_Q/mem_reg[238][3]/D
+    0:00:22  192841.1     37.71   67758.2       0.2 u_sm_ram_Q/mem_reg[127][1]/D
+    0:00:22  192860.5     37.01   67176.3       0.2 u_sm_ram_Q/mem_reg[96][3]/D
+    0:00:22  192875.2     36.84   66494.7       0.1 u_sm_ram_Q/mem_reg[31][1]/D
+    0:00:22  193124.0     36.60   64483.5       0.1 u_sm_ram_Q/mem_reg[47][0]/D
+    0:00:22  193138.8     36.44   64213.2       0.1 u_sm_ram_Q/mem_reg[152][0]/D
+    0:00:22  193169.2     35.56   61920.1       0.1 u_sm_ram_Q/mem_reg[114][0]/D
+    0:00:23  193145.2     35.39   61310.2       0.0 u_sm_ram_Q/mem_reg[127][0]/D
+    0:00:23  193133.3     35.19   61481.5       0.0 u_sm_ram_Q/data_out_reg[0]/D
+    0:00:23  193142.5     35.19   60725.8       0.0 u_sm_ram_Q/mem_reg[15][0]/D
+    0:00:23  193260.4     35.13   59605.7       0.0 u_sm_ram_Q/mem_reg[188][1]/D
+    0:00:23  193277.0     35.12   59338.1       0.0 u_sm_ram_Q/mem_reg[223][0]/D
+    0:00:23  193275.2     34.86   57930.4       0.0 u_sm_ram_I/data_out_reg[2]/D
+    0:00:23  193278.0     34.86   56313.2       0.0 u_sm_ram_I/mem_reg[246][1]/D
+    0:00:23  193280.7     34.86   54695.9       0.0 u_sm_ram_I/mem_reg[246][3]/D
+    0:00:23  193282.6     34.74   54039.0       0.0 u_sm_ram_I/mem_reg[114][3]/D
+    0:00:23  193284.4     34.74   53382.5       0.0 u_sm_ram_I/mem_reg[162][3]/D
+    0:00:23  193290.9     34.63   53032.4       0.0 u_sm_ram_I/mem_reg[90][3]/D
+    0:00:23  193301.9     34.59   52544.3       0.0 u_sm_ram_I/mem_reg[150][3]/D
+    0:00:23  193314.8     34.55   52444.9       0.0 u_sm_ram_I/mem_reg[77][0]/D
+    0:00:23  193325.9     34.55   51784.9       0.0 u_sm_ram_Q/mem_reg[115][2]/D
+    0:00:23  193320.3     34.47   49315.1       0.0 u_sm_ram_I/mem_reg[29][2]/D
+    0:00:24  193318.5     34.43   48099.3       0.0 u_sm_ram_I/mem_reg[222][0]/D
+    0:00:24  193316.7     34.36   46864.6       0.0 u_sm_ram_Q/mem_reg[91][2]/D
+    0:00:24  193329.6     34.36   46765.1       0.0 u_sm_ram_I/mem_reg[162][0]/D
+    0:00:24  193317.6     34.24   44830.7       0.0 u_sm_ram_I/mem_reg[29][0]/D
+    0:00:24  193315.7     34.18   43460.3       0.0 u_sm_ram_Q/mem_reg[15][3]/D
+    0:00:24  193326.8     34.08   42889.6       0.0 u_sm_ram_I/mem_reg[150][0]/D
+    0:00:24  193280.7     33.99   42194.8       0.0 u_sm_ram_Q/mem_reg[47][2]/D
+    0:00:24  193282.6     33.99   40634.5       0.0 u_sm_ram_I/mem_reg[210][3]/D
+    0:00:24  193284.4     33.99   39979.3       0.0 u_sm_ram_I/mem_reg[174][2]/D
+    0:00:24  193284.4     33.99   39311.0       0.0 u_sm_ram_Q/mem_reg[176][2]/D
+    0:00:24  193290.9     33.98   38744.0       0.0 u_sm_ram_Q/mem_reg[238][2]/D
+    0:00:24  193288.1     33.92   37527.0       0.0 u_sm_ram_I/mem_reg[17][0]/D
+    0:00:24  193289.9     33.92   36872.0       0.0 u_sm_ram_I/mem_reg[210][1]/D
+    0:00:24  193291.8     33.92   36216.9       0.0 u_sm_ram_I/mem_reg[114][1]/D
+    0:00:25  193278.9     33.87   34964.1       0.0 u_sm_ram_I/mem_reg[174][0]/D
+    0:00:25  193280.7     33.87   34309.4       0.0 u_sm_ram_I/mem_reg[162][2]/D
+    0:00:25  193273.3     33.80   34006.6       0.0 u_sm_ram_Q/mem_reg[15][2]/D
+    0:00:25  193275.2     33.80   33352.0       0.0 u_sm_ram_I/mem_reg[198][2]/D
+    0:00:25  193277.0     33.76   32697.4       0.0 u_sm_ram_I/mem_reg[90][2]/D
+    0:00:25  193277.0     33.75   32098.1       0.0 u_sm_ram_I/mem_reg[150][2]/D
+    0:00:25  193278.9     33.69   31574.7       0.0 u_sm_ram_Q/mem_reg[30][2]/D
+    0:00:25  193280.7     33.69   31135.4       0.0 u_sm_ram_I/mem_reg[186][2]/D
+    0:00:25  193282.6     33.67   30812.8       0.0 u_sm_ram_I/mem_reg[89][1]/D
+    0:00:25  193283.5     33.60   30360.0       0.0 u_sm_ram_I/mem_reg[89][3]/D
+    0:00:25  193273.3     33.48   30089.0       0.0 u_sm_ram_I/mem_reg[114][0]/D
+    0:00:25  193285.3     33.48   29755.7       0.0 u_sm_ram_I/mem_reg[90][0]/D
+    0:00:25  193285.3     33.30   28694.7       0.0 u_sm_ram_I/data_out_reg[2]/D
+    0:00:25  193302.8     33.17   28195.9       0.0 u_sm_ram_I/mem_reg[255][0]/D
+    0:00:26  193289.9     33.11   26726.6       0.0 u_sm_ram_Q/mem_reg[153][2]/D
+    0:00:26  193292.7     33.09   25429.9       0.0 u_sm_ram_I/mem_reg[77][3]/D
+    0:00:26  193274.3     33.01   22225.7       0.0 u_sm_ram_I/mem_reg[126][3]/D
+    0:00:26  193258.6     32.91   22558.3       0.0 u_sm_ram_I/mem_reg[126][1]/D
+    0:00:26  193254.0     32.84   22743.9       0.0 u_sm_ram_I/mem_reg[90][3]/D
+    0:00:26  193245.7     32.03   22727.7       0.0 u_sm_ram_Q/mem_reg[126][3]/D
+    0:00:26  193242.9     31.63   21938.1       0.0 u_sm_ram_Q/mem_reg[79][1]/D
+    0:00:26  193259.5     31.41   21661.9       0.0 u_sm_ram_I/mem_reg[113][2]/D
+    0:00:26  193354.4     30.79   21116.9      84.2 u_sm_ram_Q/mem_reg[252][1]/D
+    0:00:26  193262.3     29.59   24101.2      84.2 u_sm_ram_Q/mem_reg[63][0]/D
+    0:00:26  193242.9     26.44   21807.0      84.5 u_sm_ram_Q/data_out_reg[3]/D
+    0:00:26  193323.1     23.82   20166.8      84.5 u_sm_ram_Q/mem_reg[188][1]/D
+    0:00:26  193313.9     23.62   18514.7      84.5 u_sm_ram_Q/mem_reg[224][1]/D
+    0:00:27  193348.0     22.51   18682.0      84.5 u_zp/latched_no_of_zeros_reg[2]/D
+    0:00:27  193351.7     22.42   17657.3      84.5 u_sm_ram_Q/mem_reg[188][1]/D
+    0:00:27  193366.4     21.70   16764.0      84.5 u_sm_ram_Q/data_out_reg[3]/D
+    0:00:27  193379.3     21.43   16278.7      84.5 u_sm_ram_Q/data_out_reg[0]/D
+    0:00:27  193396.8     20.70   15833.6      84.5 u_sm_ram_Q/mem_reg[65][0]/D
+    0:00:27  193399.6     20.07   15160.1      84.5 u_zp/latched_no_of_zeros_reg[2]/D
+    0:00:27  193320.3     19.41   13724.3      84.5 u_zp/latched_no_of_zeros_reg[2]/D
+    0:00:27  193374.7     18.44   12464.2      84.5 u_sm_ram_I/mem_reg[90][0]/D
+    0:00:27  193349.8     18.19   11490.4      84.5 u_sm_ram_I/mem_reg[77][2]/D
+    0:00:28  193493.6     15.04   10512.6     168.6 u_sm_ram_I/mem_reg[174][3]/D
+    0:00:28  193461.3     14.15    9600.8     126.5 u_sm_ram_Q/mem_reg[31][0]/D
+    0:00:28  193474.3     13.90    9296.1     126.5 u_sm_ram_Q/mem_reg[47][2]/D
+    0:00:28  193449.4     12.78    8234.2     126.5 u_sm_ram_I/mem_reg[102][2]/D
+    0:00:28  193435.5     12.64    7678.5     126.5 u_sm_ram_I/mem_reg[174][1]/D
+    0:00:28  193427.3     11.72    6892.8     126.5 u_sm_ram_I/mem_reg[246][3]/D
+    0:00:28  193425.4     11.66    6667.8     126.5 u_sm_ram_Q/mem_reg[248][2]/D
+    0:00:28  193437.4     11.02    6550.2     126.5 u_sm_ram_Q/mem_reg[63][2]/D
+    0:00:28  193398.7     10.69    6083.2     126.5 u_sm_ram_I/mem_reg[210][1]/D
+    0:00:28  193400.5     10.35    5598.6     126.5 u_sm_ram_Q/mem_reg[96][0]/D
+    0:00:28  193402.4     10.09    5173.9     126.5 u_sm_ram_I/mem_reg[102][3]/D
+    0:00:28  193404.2      9.62    4523.8     126.5 u_sm_ram_I/mem_reg[210][2]/D
+    0:00:28  193425.4      9.12    4183.3     126.5 u_sm_ram_Q/mem_reg[251][3]/D
+    0:00:29  193414.3      8.37    3760.2     126.5 u_sm_ram_Q/mem_reg[114][2]/D
+    0:00:29  193360.0      8.28    3385.0      84.5 u_sm_ram_Q/mem_reg[15][1]/D
+    0:00:29  193313.0      7.40    2671.2      42.4 u_sm_ram_I/mem_reg[112][1]/D
+    0:00:29  193302.8      6.45    2485.3      42.4 u_sm_ram_Q/mem_reg[79][1]/D
+    0:00:29  193301.9      6.09    2121.0      42.4 u_sm_ram_Q/data_out_reg[3]/D
+    0:00:29  193269.7      5.79    1910.4      42.4 u_sm_ram_Q/mem_reg[47][2]/D
+    0:00:29  193239.2      5.44    1583.3      42.4 u_sm_ram_Q/mem_reg[79][2]/D
+    0:00:29  193195.9      5.06    1542.9      42.1 u_sm_ram_I/mem_reg[250][1]/D
+    0:00:29  193193.2      4.87    1522.7      42.1 u_sm_ram_I/mem_reg[250][1]/D
+    0:00:29  193192.2      4.45    1482.9      42.1 u_sm_ram_Q/data_out_reg[1]/D
+    0:00:29  193213.4      4.37    1445.9      42.1 u_sm_ram_I/mem_reg[246][1]/D
+    0:00:30  193212.5      4.34    1410.5      42.1 u_sm_ram_I/mem_reg[246][2]/D
+    0:00:30  193227.3      4.12    1270.8      42.1 u_sm_ram_I/mem_reg[252][1]/D
+    0:00:30  193231.9      4.01    1162.7      42.1 u_sm_ram_Q/data_out_reg[3]/D
+    0:00:30  193224.5      3.80    1169.4      42.1 u_sm_ram_I/mem_reg[112][2]/D
+    0:00:30  193206.1      3.75    1167.8      42.1 u_sm_ram_Q/data_out_reg[2]/D
+    0:00:30  193171.0      3.50    1157.4      42.1 u_sm_ram_I/data_out_reg[3]/D
+    0:00:31  193224.5      3.47     723.0      42.1                          
+    0:00:32  193205.1      3.12     699.1      42.1 u_sm_ram_Q/data_out_reg[1]/D
+    0:00:32  193219.9      2.90     547.8      42.1 u_sm_ram_Q/mem_reg[114][2]/D
+    0:00:33  193461.3      2.56     294.2      42.1                          
+    0:00:33  193480.7      2.47     210.0      42.1                          
+    0:00:34  193491.8      2.19     207.7      42.1 u_sm_ram_Q/data_out_reg[1]/D
+    0:00:34  193474.3      2.12     192.4      42.1 u_sm_ram_Q/mem_reg[184][3]/D
+    0:00:35  193507.4      2.00      86.8      42.1                          
+    0:00:36  193536.9      1.68      84.7      42.1                          
+    0:00:36  193499.1      1.54      57.1      42.1 u_sm_ram_I/data_out_reg[0]/D
+    0:00:37  193558.1      0.73       9.5      42.1                          
+    0:00:37  193548.0      0.46       1.3      42.1 u_sm_ram_Q/data_out_reg[1]/D
+    0:00:37  193549.8      0.34       0.5      42.1 u_sm_ram_Q/data_out_reg[1]/D
+    0:00:37  193568.3      0.06       0.1      42.1 u_sm_ram_Q/data_out_reg[1]/D
+    0:00:38  193674.2      0.00      -0.0      42.1                          
+    0:00:38  193674.2      0.00      -0.0      42.1                          
+    0:00:38  184427.8      0.00      -0.0      42.1                          
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_fanout)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:38  184427.8      0.00      -0.0      42.1                          
+    0:00:38  184386.4      0.00      -0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:38  184386.4      0.00      -0.0       0.0                          
+    0:00:38  184386.4      0.00      -0.0       0.0                          
+    0:00:39  183543.1      4.75      28.3       0.0                          
+    0:00:39  183153.3      4.75      69.3       0.0                          
+    0:00:39  182924.7      4.75      75.2       0.0                          
+    0:00:39  182737.6      4.75      75.2       0.0                          
+    0:00:40  182627.0      5.82      79.2       0.0                          
+    0:00:40  182519.2      5.83      83.3       0.0                          
+    0:00:40  182480.5      5.83      83.3       0.0                          
+    0:00:40  182480.5      5.83      83.3       0.0                          
+    0:00:40  182493.4      4.39      68.1       0.0 u_sm_ram_Q/data_out_reg[3]/D
+    0:00:40  182486.0      3.47      65.8       0.0 u_sm_ram_I/data_out_reg[2]/D
+    0:00:41  182527.5      2.90      60.3       0.0 u_sm_ram_I/data_out_reg[3]/D
+    0:00:41  182530.3      2.46      55.2       0.0 u_sm_ram_Q/data_out_reg[2]/D
+    0:00:41  182527.5      2.21      54.5       0.0 u_sm_ram_I/data_out_reg[0]/D
+    0:00:41  182551.4      2.04      52.8       0.0 u_sm_ram_I/data_out_reg[2]/D
+    0:00:43  182566.2      1.99      53.8       0.0                          
+    0:00:43  181163.5     15.01    1691.1       0.0                          
+    0:00:43  181148.8     15.01    1689.4       0.0                          
+    0:00:43  181148.8     15.01    1689.4       0.0                          
+    0:00:43  181148.8     15.01    1689.4       0.0                          
+    0:00:43  181148.8     15.01    1689.4       0.0                          
+    0:00:43  181148.8     15.01    1689.4       0.0                          
+    0:00:43  181148.8     15.01    1689.4       0.0                          
+    0:00:44  181140.5      4.17     492.4       0.0 u_sm_ram_Q/mem_reg[253][0]/D
+    0:00:46  181135.9      3.87     462.9       0.0                          
+    0:00:47  181141.4      3.87     462.9       0.0                          
+Loading db file '/home/ICer/Labs/Zigbee/std_cells/saed90nm_max.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'zigbee_phy_tx' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'u_mod_top/u_chirp/clk': 3244 load(s), 1 driver(s)
+1
+#################### Test Protocol #########################
+create_test_protocol
+In mode: all_dft...
+
+Information: Starting test protocol creation. (TEST-219)
+  ...reading user specified clock signals...
+Information: Identified system/test clock port scan_clk (45.0,55.0). (TEST-265)
+  ...reading user specified asynchronous signals...
+1
+#################### DRC Check #########################
+dft_drc -verbose               > ../results/dft_pre_dft_drc.rpt
+#show the dft chains
+preview_dft -show scan_summary > ../results/dft_pre_dft_chains.rpt
+#################### Scan Stitching #########################
+insert_dft
+Warning: Design 'zigbee_phy_tx' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+  Information: Using test design rule information from previous dft_drc run.
+  Architecting Scan Chains
+  Routing Scan Chains
+  Routing Global Signals
+  Mapping New Logic
+Resetting current test mode
+Warning: Design 'zigbee_phy_tx' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+  Beginning Mapping Optimizations
+  -------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+
+
+  Beginning Phase 1 Design Rule Fixing  (max_transition)  (max_fanout)  (max_capacitance)
+  ------------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+
+
+  Beginning Phase 2 Design Rule Fixing  (max_transition)  (max_fanout)  (max_capacitance)
+  ------------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:54  181213.3 128625.55 417258016.0    1853.1                          
+
+1
+compile -scan -map_effort high -incremental
+Information: Choosing a test methodology will restrict the optimization of sequential cells. (UIO-12)
+
+Information: There are 20 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Mapping Optimizations  (High effort)  (Incremental)
+  -------------------------------
+
+  Beginning Incremental Implementation Selection
+  ----------------------------------------------
+  Selecting implementations
+  Selecting implementations
+  Selecting implementations
+  Selecting implementations
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:04  181191.2      3.87     462.9       0.0                          
+Warning: The nextstate or clock_on object of the test_cell definition of the library cell 'SDFFSSRX2' has scan pins. (OPT-1209)
+Warning: The nextstate or clock_on object of the test_cell definition of the library cell 'SDFFSSRX1' has scan pins. (OPT-1209)
+    0:00:06  181461.2      2.99     252.9       0.0                          
+    0:00:06  181435.4      2.59     225.8       0.0 u_sm_ram_I/mem_reg[112][3]/D
+    0:00:06  181408.7      2.01     119.2       0.0 u_sm_ram_Q/mem_reg[27][2]/D
+    0:00:07  181368.1      1.57      55.6       0.0 u_zp/latched_no_of_zeros_reg[2]/D
+    0:00:07  181415.1      1.05      27.3       0.0 u_sm_ram_I/mem_reg[77][3]/D
+    0:00:07  181423.4      0.95      25.6       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:07  181404.1      0.74       8.8       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:07  181411.4      0.55       7.9       0.0 u_sm_ram_I/data_out_reg[3]/D
+    0:00:07  181410.5      0.53       7.9       0.0 u_zp/latched_no_of_zeros_reg[2]/D
+    0:00:07  181396.7      0.45       6.1       0.0 u_sm_ram_I/data_out_reg[3]/D
+    0:00:08  181377.3      0.38       2.6       0.0 u_sm_ram_Q/mem_reg[86][2]/D
+    0:00:08  181373.6      0.13       1.6       0.0 u_zp/latched_no_of_zeros_reg[1]/D
+    0:00:08  181337.7      0.00       0.0       0.0 u_sm_ram_Q/data_out_reg[1]/D
+    0:00:08  181337.7      0.00       0.0       0.0                          
+    0:00:08  181337.7      0.00       0.0       0.0                          
+    0:00:08  181359.8      0.00       0.0       0.0                          
+Loading db file '/home/ICer/Labs/Zigbee/std_cells/saed90nm_max.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'zigbee_phy_tx' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'u_mod_top/u_chirp/clk': 3244 load(s), 1 driver(s)
+     Net 'u_mod_top/u_chirp/test_se': 3244 load(s), 1 driver(s)
+1
+#################### Second Checks #########################
+dft_drc -coverage_estimate     > ../results/dft_post_dft_drc.rpt
+#show the dft chains
+preview_dft -show scan_summary > ../results/dft_post_dft_chains.rpt
+set_svf -off
+1
+#############################################################################
+# Write out Design
+#############################################################################
+write -hierarchy -format verilog -output ../results/${top_module}_dft.v
+Writing verilog file '/home/ICer/Labs/Zigbee/dft/results/zigbee_phy_tx_dft.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+write -hierarchy -format ddc     -output ../results/${top_module}_dft.ddc
+Writing ddc file '../results/zigbee_phy_tx_dft.ddc'.
+1
+write_sdc                                ../results/${top_module}_dft.sdc
+1
+write_sdf                                ../results/${top_module}_dft.sdf
+Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/home/ICer/Labs/Zigbee/dft/results/zigbee_phy_tx_dft.sdf'. (WT-3)
+1
+################# reporting #######################
+report_area -hierarchy                       > ../results/area_dft.rpt
+report_power -hierarchy                      > ../results/power_dft.rpt
+report_timing -max_paths 100 -delay_type max > ../results/setup_dft.rpt
+report_timing -max_paths 100 -delay_type min > ../results/hold_dft.rpt
+report_clocks -attributes                    > ../results/clocks_dft.rpt
+report_constraint -all_violators             > ../results/constraints_dft.rpt
+report_port                                  > ../results/ports_dft.rpt
+################# starting graphical user interface #######################
+#gui_start
+dc_shell> 
